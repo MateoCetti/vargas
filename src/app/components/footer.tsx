@@ -23,8 +23,12 @@ export default function Footer() {
             <div className="my-10">
                 <h1 className="text-xl">seguinos</h1>
                 <div className="flex flex-row gap-4 justify-center">
-                    <InstagramIcon viewBox="0 0 50 50" width={25}  />
-                    <FacebookIcon viewBox="0 0 50 50" width={25} />
+                    <a target="_blank" href="https://www.facebook.com/vargas.cba" >
+                        <FacebookIcon viewBox="0 0 50 50" width={25} />
+                    </a>
+                    <a target="_blank" href="https://www.instagram.com/vargas.productosfrescos/">
+                        <InstagramIcon viewBox="0 0 50 50" width={25} />
+                    </a>
                 </div>
             </div>
             <div className="col-span-full bg-green-900 tex-center text-white text-sm py-4 mt-10">© 2023 <b>Vargas</b> - Todos los Derechos Reservados. -</div>
