@@ -1,7 +1,7 @@
 
 export default function AboutUsPage() {
     return (
-        <section className="my-20 bg-white">
+        <section className="mt-20 mb-6 bg-white shadow">
             <div className="bg-green-900 text-center py-4 text-white text-xl">Una empresa - Un legado de familia.</div>
             <p className="text-center p-4">
                 Como toda empresa familiar su historia se encuentra ligada aun pasado lleno de alegrias y desafios, comienza con la llegadade los antepasados más especifico Ramón Vargas siendo española comienzos del siglo pasado. (ya en su querida españaprecisamente en Adra un pequeño puebo de Andalucia se dedicabanal comercio de frutas y verduras); al llegar a América,haciendo base en la provincia de San Juan comienzan aproducir tomates y uvas comercializando dichas mercaderias enferias de aquella pequeña provincia, ya para la decada del 40con la incorporación de Adrian y Antonio Vargas (hijos de Ramón)decidieron incurcionar en la exportación de mercaderias a laciudad de Tucumán y Córdoba, llegando asi al año 1957 sedecide comprar dos locales comerciales en aquel 'antiguo'Mercado de Abasto que se ubicaba a orillas delRío Suquia de Córdoba.
