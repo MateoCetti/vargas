@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react";
 
-import MenuIcon from "../icons/menu";
+import MenuIcon from "./icons/menu";
 import { menuItems } from "./navbar";
 import Link from "next/link";
 

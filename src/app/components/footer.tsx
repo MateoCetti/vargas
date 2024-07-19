@@ -1,7 +1,7 @@
 import Image from "next/image"
 
-import InstagramIcon from "../icons/instagram"
-import FacebookIcon from "../icons/facebook"
+import InstagramIcon from "./icons/instagram"
+import FacebookIcon from "./icons/facebook"
 
 export default function Footer() {
     return (
