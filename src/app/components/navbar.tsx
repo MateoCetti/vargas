@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-
-import MenuIcon from "../icons/menu";
+import Drawer from "./drawer";
 
 export default function Navbar() {
+    
     return (
         <nav className="grid grid-cols-3 p-2 bg-white shadow-md fixed top-0 w-screen">
-                <MenuIcon className="col-span-1 lg:hidden self-center"  width={25} height={25}  />
+                <Drawer />
                 <Image className="col-span-2 lg:col-span-1"
                     src="/logo_1.png"
                     width={94}
