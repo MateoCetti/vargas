@@ -22,7 +22,7 @@ export default function Navbar() {
             <ul className="hidden lg:flex flex-row justify-around mt-2.5">
                 {
                     menuItems.map((element, index) =>
-                        <li>
+                        <li key={index}>
                             <Link
                                 key={index}
                                 href={element.href}>{element.name}
