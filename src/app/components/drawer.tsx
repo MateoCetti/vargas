@@ -2,12 +2,10 @@
 import { useState } from "react";
 
 import MenuIcon from "./icons/menu";
-import { menuItems } from "./navbar";
+import { itemsType } from "./navbar";
 import Link from "next/link";
 
-type sape = typeof menuItems;
-
-export default function Drawer({ items }: { items: sape }) {
+export default function Drawer({ items }: { items: itemsType }) {
     const [visible, setVisible] = useState<boolean>(false);
 
     function changeVisibleState(state: boolean) {

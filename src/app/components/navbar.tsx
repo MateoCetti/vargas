@@ -2,12 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import Drawer from "./drawer";
 
-export const menuItems: Array<{ name: string, href: string }> = [
+const menuItems: Array<{ name: string, href: string }> = [
     { name: "Inicio", href: "/" },
     { name: "Productos", href: "/products" },
     { name: "Sobre nosotros", href: "/about_us" },
     { name: "Donde ubicarnos", href: "/find_us" }
 ]
+
+export type itemsType = typeof menuItems;
 
 export default function Navbar() {
 
