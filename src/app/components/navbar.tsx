@@ -24,7 +24,7 @@ export default function Navbar() {
             <ul className="hidden lg:flex flex-row justify-around mt-2.5">
                 {
                     menuItems.map((element, index) =>
-                        <li key={index}>
+                        <li key={index} className="hover:font-bold hover:underline decoration-green-800 decoration-2 transition duration-300 ease-in-out hover:scale-110">
                             <Link
                                 key={index}
                                 href={element.href}>{element.name}

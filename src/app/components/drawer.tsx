@@ -21,7 +21,7 @@ export default function Drawer({ items }: { items: itemsType }) {
                     <p className="text-xl mt-5 border-b-4">Menu</p>
                     {
                         items.map((element, index) =>
-                            <Link
+                            <Link className="hover:font-bold hover:underline decoration-2 decoration-green-800"
                                 key={index}
                                 onClick={() => { changeVisibleState(false) }}
                                 href={element.href}>{element.name}

@@ -22,7 +22,7 @@ export default function Home() {
           <div className="flex flex-col justify-center items-center my-20">
             <h1 className="text-xl mb-8">Productos</h1>
             <p className="my-4">Conocé acerca de nuestros productos de primera calidad.</p>
-            <button className="mt-2 border border-black rounded rounded-full py-3 px-10"><Link href={"/products"}>Ver todos</Link></button>
+            <button className="mt-2 border border-black rounded rounded-full py-3 px-10 hover:bg-green-900 transition duration-300 hover:text-white ease-in-out hover:scale-110 delay-100"><Link href={"/products"}>Ver todos</Link></button>
           </div>
         </div>
       </section>
