@@ -16,7 +16,7 @@ export default function Drawer({ items }: { items: itemsType }) {
     return (
         <>
             <MenuIcon className="col-span-1 lg:hidden self-center" width={25} height={25} onClick={() => { changeVisibleState(true) }} />
-            <div className={`transition ${visible ? "translate-x-0" : "-translate-x-full"} duration-1000 bg-white fixed w-7/12 h-screen z-10`} >
+            <div className={`transition ${visible ? "translate-x-0" : "-translate-x-full"} duration-1000 bg-white absolute start-0 top-0 w-7/12 h-screen z-10`} >
                 <div className="flex flex-col gap-10 text-center">
                     <p className="text-xl mt-5 border-b-4">Menu</p>
                     {
@@ -30,7 +30,7 @@ export default function Drawer({ items }: { items: itemsType }) {
                 </div>
             </div>
             <div
-                className={`transition ${visible ? "opacity-60" : "hidden"} duration-1000 bg-black fixed w-screen h-screen end-0`}
+                className={`transition ${visible ? "opacity-60" : "hidden"} absolute top-0 duration-1000 bg-black fixed w-screen h-screen end-0`}
                 onClick={() => { changeVisibleState(false) }}>
             </div>
         </>
