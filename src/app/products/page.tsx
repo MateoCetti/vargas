@@ -21,7 +21,7 @@ export default function productsPage() {
             <div className="col-span-full bg-green-700 w-full text-center p-2 text-white text-2xl">Nuestros productos</div>
 
             {
-                products.map((p) =><ProductCard product={p} />)
+                products.map((p, i) =><ProductCard key={i} product={p} />)
             }
         </section>
     );
