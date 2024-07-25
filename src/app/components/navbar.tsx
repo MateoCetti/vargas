@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Drawer from "./drawer";
+import ShoppingCart from "./shoppingCart";
 
 const menuItems: Array<{ name: string, href: string }> = [
     { name: "Inicio", href: "/" },
@@ -16,7 +17,7 @@ export default function Navbar() {
     return (
         <nav className="grid grid-cols-3 p-2 bg-white shadow-md fixed top-0 w-screen z-40">
             <Drawer items={menuItems} />
-            <Image className="col-span-2 lg:col-span-1"
+            <Image
                 src="/logo_1.png"
                 width={94}
                 height={43}
@@ -32,6 +33,7 @@ export default function Navbar() {
                         </li>)
                 }
             </ul>
+            <ShoppingCart  />
         </nav>
     );
 }
