@@ -8,7 +8,11 @@ import { alias } from "drizzle-orm/pg-core";
 
 
 export default async function productsPage() {
-    const res = await db.select().from(products).innerJoin(varieties, eq(products.id, varieties.productId));
+    const res = await db.query.products.findMany({
+        with: {
+            varieties: true
+        }
+    })
 
 
     return (
@@ -16,7 +20,7 @@ export default async function productsPage() {
             <div className="col-span-full bg-green-700 w-full text-center p-2 text-white text-2xl">Nuestros productos</div>
 
             {
-                res.map((p, i) => <ProductCard key={i} product={p} />)
+                res.map((p, i) => <ProductCard key={i} product={p} varieties={p.varieties} />)
             }
         </section>
     );

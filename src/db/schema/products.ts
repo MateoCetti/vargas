@@ -9,9 +9,9 @@ export const products = pgTable('products', {
     name: text('name').notNull(),
 });
 
-// export const productRelations = relations(products, ({ many }) => ({
-//     varieties: many(varieties),
-//   }));
+export const productRelations = relations(products, ({ many }) => ({
+    varieties: many(varieties),
+  }));
 
 export type product = typeof products.$inferSelect; // return type when queried
 export type NewProduct = typeof products.$inferInsert; // insert type

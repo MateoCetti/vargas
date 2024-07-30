@@ -17,9 +17,9 @@ export const varieties = pgTable('varieties', {
     price: doublePrecision("price").notNull() 
 });
 
-// export const varietiesRelations = relations(varieties, ({ one }) => ({
-//     product: one(products, { fields: [varieties.productId], references: [products.id] }),
-//   }));
+export const varietiesRelations = relations(varieties, ({ one }) => ({
+    product: one(products, { fields: [varieties.productId], references: [products.id] }),
+  }));
   
 
 export type variety = typeof varieties.$inferSelect; // return type when queried
