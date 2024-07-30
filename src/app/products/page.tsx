@@ -1,11 +1,6 @@
 import db from "../../../db";
-import { products } from "@/db/schema/products";
-import { varieties } from "@/db/schema/varieties";
 
 import ProductCard from "./productCard";
-import { eq } from "drizzle-orm";
-import { alias } from "drizzle-orm/pg-core";
-
 
 export default async function productsPage() {
     const res = await db.query.products.findMany({

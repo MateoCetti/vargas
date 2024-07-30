@@ -17,7 +17,7 @@ export default function ProductCard({ product, varieties }: { product: product, 
     const [hidden, setHidden] = useState<boolean>(true)
     const [quantity, setQuantity] = useState<number>(0)
 
-    // pasar esta func al reducer/action
+    // TODO: pasar esta func al reducer/action
     function handleAdd(quantity: number) {
         let newCart = [...cart];
         const prod = cart.find((p) => p.name == product.name)
