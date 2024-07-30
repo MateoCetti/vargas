@@ -61,7 +61,7 @@ export default function ProductCard({ product, varieties }: { product: product, 
 
                             {
                                 varieties.map((v, i) =>
-                                    <div key={i}>
+                                    <div key={i} className="col-span-3 lg:col-span-4 grid grid-cols-3 lg:grid-cols-4 w-full">
                                         <p>{v.name}</p>
                                         <p>{v.price}</p>
                                         <div className="relative flex items-center max-w-[8rem]">
