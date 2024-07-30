@@ -1,4 +1,5 @@
 import pg from "pg"
+import { drizzle } from "drizzle-orm/node-postgres";
 import 'dotenv/config'
 
 const { Client } = pg
@@ -14,4 +15,6 @@ const client = new Client(
 
 client.connect()
 
-export default client;
+const db = drizzle(client);
+
+export default db;
