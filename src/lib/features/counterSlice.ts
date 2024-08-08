@@ -1,8 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type product = {
+export type product = {
     name: string,
-    quantity: number
+    quantity: number,
+    picture: string
 }
 
 const products: product[] = []

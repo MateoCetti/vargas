@@ -6,7 +6,7 @@ import Cart from "./icons/cart";
 import { useAppSelector } from "@/lib/hooks";
 
 export default function ShoppingCart() {
-    const products = useAppSelector((s) => s.counterReducer.products)
+    const products = useAppSelector((s) => s.persistedReducer.productsState.products)
 
     return (
         <Link href={"/buy"} className="relative">

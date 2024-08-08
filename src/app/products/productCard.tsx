@@ -11,7 +11,7 @@ import { variety } from "@/db/schema/varieties"
 
 export default function ProductCard({ product, varieties }: { product: product, varieties: variety[] }) {
 
-    const cart = useAppSelector(state => state.counterReducer.products)
+    const cart = useAppSelector(state => state.persistedReducer.productsState.products)
     const dispatch = useAppDispatch()
 
     const [hidden, setHidden] = useState<boolean>(true)
@@ -25,10 +25,10 @@ export default function ProductCard({ product, varieties }: { product: product, 
             newCart.splice(
                 newCart.indexOf(prod),
                 1,
-                { name: prod.name, quantity: prod.quantity + quantity }
+                { name: prod.name, quantity: prod.quantity + quantity, picture: prod.picture }
             );
         } else {
-            newCart.push({ name: product.name, quantity: quantity })
+            newCart.push({ name: product.name, quantity: quantity, picture: product.image })
         }
         dispatch(setProducts(newCart))
 
