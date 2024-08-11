@@ -3,11 +3,7 @@ import db from "../../../db";
 import ProductCard from "./productCard";
 
 export default async function productsPage() {
-    const res = await db.query.products.findMany({
-        with: {
-            varieties: true
-        }
-    })
+    const res = await db.query.products.findMany()
 
 
     return (
@@ -15,7 +11,7 @@ export default async function productsPage() {
             <div className="col-span-full bg-green-700 w-full text-center p-2 text-white text-2xl">Nuestros productos</div>
 
             {
-                res.map((p, i) => <ProductCard key={i} product={p} varieties={p.varieties} />)
+                res.map((p, i) => <ProductCard key={i} product={p} />)
             }
         </section>
     );

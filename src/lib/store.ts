@@ -14,7 +14,7 @@ import {
   REGISTER,
 } from 'redux-persist'
 
-import counterReducer from "./features/counterSlice"
+import cartReducer from './features/storeSlice'
 
 const persistConfig = {
   key: "root",
@@ -24,7 +24,7 @@ const persistConfig = {
 }
 
 const rootReducer = combineReducers({
-  productsState: counterReducer
+  productsState: cartReducer
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
