@@ -15,13 +15,13 @@ export default async function Page({ params }: { params: { product: string } }) 
 
     return (
         <>
-            <div className=" flex bg-white rounded-xl mb-5 mt-20 mx-5 flex flex-col items-center p-5">
+            <div className=" flex bg-white rounded-xl mb-5 mt-20 lg:mx-5 flex flex-col items-center py-5 px-1 lg:px-5">
                 <div className="flex flex-row w-full justify-center">
                     <Image src={product[0].image} width={100} height={100} alt=""></Image>
-                    <h1 className="mt-10 text-4xl">{product[0].name}</h1>
+                    <h1 className="mt-10 text-xl">{product[0].name}</h1>
                 </div>
 
-                <div className="grid grid-cols-3 lg:grid-cols-4 w-full text-center">
+                <div className="grid grid-cols-3 lg:grid-cols-4 w-full text-center text-xs lg:text-xl">
                     <div className="bg-green-700 py-4 text-white">Producto</div>
                     <div className="bg-green-700 py-4 text-white">Precio</div>
                     <div className="bg-green-700 py-4 text-white">Cantidad</div>

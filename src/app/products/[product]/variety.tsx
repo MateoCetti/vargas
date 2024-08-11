@@ -40,18 +40,18 @@ export default function Variety({ variety }: { variety: variety }) {
             <div className="col-span-3 lg:col-span-4 grid grid-cols-3 lg:grid-cols-4 w-full text-center">
                 <p>{variety.name}</p>
                 <p>{variety.price}</p>
-                <div className="relative flex items-center max-w-[8rem]">
-                    <button className="bg-green-700 hover:bg-green-400 border border-gray-300 rounded-s-full p-3  focus:ring-gray-100 focus:ring-2 focus:outline-none"
+                <div className="relative flex items-center justify-center">
+                    <button className="bg-green-700 hover:bg-green-400 border border-gray-300 rounded-s-full p-1 lg:p-3  focus:ring-gray-100 focus:ring-2 focus:outline-none"
                         onClick={(e) => { changeQuantity(item.item.quantity-1)}}>
                         <svg className="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
                             <path stroke="currentColor" d="M1 1h16" />
                         </svg>
                     </button>
-                    <input type="number" className="bg-gray-50 border-x-0 border-gray-300 text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    <input type="number" className="bg-gray-50 border-x-0 border-gray-300 text-center text-gray-900 focus:ring-blue-500 focus:border-blue-500 block w-10 py-2.5 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         value={item.item.quantity} onChange={() => { }} />
-                    <button className="bg-green-700  hover:bg-green-400 border border-gray-300 rounded-e-full p-3 focus:ring-gray-100 focus:ring-2 focus:outline-none"
+                    <button className="bg-green-700  hover:bg-green-400 border border-gray-300 rounded-e-full p-1 lg:p-3 focus:ring-gray-100 focus:ring-2 focus:outline-none"
                         onClick={(e) => { changeQuantity(item.item.quantity+1)}}>
-                        <svg className="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                        <svg className="h-3 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
                             <path stroke="currentColor" d="M9 1v16M1 9h16" />
                         </svg>
                     </button>
