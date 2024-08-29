@@ -63,8 +63,8 @@ export default function Page() {
                                 <p>Total</p>
                                 <br />
                             </div>
-                            {cart.map((product) =>
-                                <div className="flex flex-row gap-4 w-full justify-around">
+                            {cart.map((product, i) =>
+                                <div key={i} className="flex flex-row gap-4 w-full justify-around">
                                     <p>{product.item.name}</p>
                                     <p>{product.item.quantity}</p>
                                     <p>{product.item.price}</p>
