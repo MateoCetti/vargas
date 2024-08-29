@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 import { useAppSelector } from "@/lib/hooks";
+import { productRelations } from "@/db/schema/products";
 
 export default function Page() {
     const cart = useAppSelector((s) => s.persistedReducer.productsState.cart);
@@ -65,7 +66,10 @@ export default function Page() {
                             {cart.map((product) =>
                                 <div className="flex flex-row gap-4 w-full justify-around">
                                     <p>{product.item.name}</p>
-                                    <p>{product.item.quantity}</p></div>)}
+                                    <p>{product.item.quantity}</p>
+                                    <p>{product.item.price}</p>
+                                    </div>
+                                )}
                         </div>
                     </div>
                 </div>

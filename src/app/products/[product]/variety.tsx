@@ -17,7 +17,8 @@ export default function Variety({ variety }: { variety: variety }) {
             item: {
                 name: variety.name,
                 picture: variety.img_src,
-                quantity: 0
+                quantity: 0,
+                price: variety.price
             }
         })
 
@@ -28,7 +29,8 @@ export default function Variety({ variety }: { variety: variety }) {
             item: {
                 name: item.item.name,
                 picture: item.item.picture,
-                quantity: value
+                quantity: value,
+                price: item.item.price
             }
         }
         setItem(newItem);

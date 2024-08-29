@@ -3,7 +3,8 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 type Variety = {
   name: string,
   quantity: number,
-  picture: string
+  picture: string,
+  price: number
 }
 
 export type Item = {
@@ -20,7 +21,7 @@ export const cartSlice = createSlice({
   },
   reducers: {
     addItem: (state, action: PayloadAction<Item>) => {
-
+      state.cart.push(action.payload);
     },
     updateItem: (state, action: PayloadAction<Item>) => {
 
