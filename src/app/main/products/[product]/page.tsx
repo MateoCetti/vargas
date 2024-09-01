@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { eq } from "drizzle-orm";
 
-import db from "../../../../db";
+import db from "../../../../../db";
 import { varieties as Varieties } from "@/db/schema/varieties";
 import { products } from "@/db/schema/products";
 
