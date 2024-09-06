@@ -16,7 +16,7 @@ export default async function Page({ params }: { params: { product: string } }) 
         <>
             <div className="mt-20 flex justify-around items-center">
                 <Link href={`/admin/`}><BackIcon className="ml-2" /></Link>
-                <h1 className="grow text-4xl text-center">{product?.name}</h1>
+                <h1 className="grow text-4xl text-center">Producto</h1>
             </div>
             <div className="mt-5 bg-white pb-5 rounded-xl mx-5 px-4">
                 <div className="flex justify-center">
@@ -38,7 +38,7 @@ export default async function Page({ params }: { params: { product: string } }) 
                     <h1 className="text-2xl">Variedades</h1>
                 </div>
                 <div className="flex flex-col gap-2 divide-x">
-                {varieties.map((variety) => <div className="flex justify-center"><Link href={`/admin/${productID}/${variety.id}`}>{variety.name}</Link></div>)}
+                {varieties.map((variety, i) => <div key={i} className="flex justify-center"><Link href={`/admin/${productID}/${variety.id}`}>{variety.name}</Link></div>)}
                 </div>
             </div>
         </>

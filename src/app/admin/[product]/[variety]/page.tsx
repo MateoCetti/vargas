@@ -14,7 +14,7 @@ export default async function Page({ params }: { params: { variety: string } }) 
         <>
             <div className="mt-20 flex justify-around items-center">
                 <Link href={`/admin/${variety?.productId}`}><BackIcon className="ml-2" /></Link>
-                <h1 className="grow text-4xl text-center">{variety?.name}</h1>
+                <h1 className="grow text-4xl text-center">Variedad</h1>
             </div>
             <div className="mt-5 bg-white pb-5 rounded-xl mx-5 px-4">
                 <div className="flex justify-center">
