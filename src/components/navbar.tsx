@@ -12,7 +12,7 @@ const menuItems: Array<{ name: string, href: string }> = [
 
 const adminItems: Array<{ name: string, href: string }> = [
     { name: "Productos", href: "/admin" },
-    { name: "Variantes", href: "/admin" }
+    { name: "Logout", href: "/admin" }
 ]
 
 export type itemsType = typeof menuItems;
