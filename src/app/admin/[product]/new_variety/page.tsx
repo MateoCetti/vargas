@@ -37,7 +37,7 @@ export default async function Page({ params }: { params: { product: string } }) 
         <>
 
             <div className="mt-20 flex justify-around items-center">
-                <Link href={`/admin/`}><BackIcon className="ml-2" /></Link>
+                <Link href={`/admin/${productID}`}><BackIcon className="ml-2" /></Link>
                 <h1 className="text-4xl">Nueva variedad</h1>
             </div>
             <form action={create} className="mt-5 bg-white pb-5 rounded-xl mx-5 px-4">
@@ -72,7 +72,7 @@ export default async function Page({ params }: { params: { product: string } }) 
                     </div>
                 </div>
                 <div className="mt-5 bg-white rounded-xl mx-5 px-4 flex justify-around py-2">
-                    <Link href={`/admin/${productID}`} className="bg-red-500 text-white rounded-xl p-2">Cancelar</Link>
+                    <Link href={`/admin/${productID}/`} className="bg-red-500 text-white rounded-xl p-2">Cancelar</Link>
                     <button type="submit" className="bg-green-500 text-white rounded-xl p-2">Guardar</button>
                 </div>
             </form>
