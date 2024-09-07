@@ -1,4 +1,4 @@
-import { products, NewProduct } from "@/db/schema/products";
+import { products, product } from "@/db/schema/products";
 import { varieties as Varieties } from "@/db/schema/varieties";
 import db from "../../../../db";
 import { eq } from "drizzle-orm";
@@ -8,6 +8,7 @@ import EditIcon from "@/components/icons/edit";
 import DeleteIcon from "@/components/icons/delete";
 import AddIcon from "@/components/icons/add";
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 
 export default async function Page({ params }: { params: { product: string } }) {
     const productID = Number(params.product);
@@ -18,7 +19,8 @@ export default async function Page({ params }: { params: { product: string } }) 
 
     async function save(formData: FormData) {
         "use server"
-        const productToUpdate: NewProduct = {
+        const productToUpdate: product = {
+            id: product?.id as number,
             name: formData.get("name") as string,
             image: formData.get("image") as string,
             createdAt: new Date()
@@ -32,6 +34,17 @@ export default async function Page({ params }: { params: { product: string } }) 
             console.log(error)
         }
         redirect(`/admin`)
+    }
+
+    async function remove(formData: FormData){
+        "use server"
+        const id = Number(formData.get("varietyID"));
+        try {
+            await db.delete(Varieties).where(eq(Varieties.id, id))
+        } catch (error) {
+            
+        }
+        revalidatePath(`/admin/`);
     }
 
     return (
@@ -71,7 +84,7 @@ export default async function Page({ params }: { params: { product: string } }) 
                             <Link href={`/admin/${productID}/${variety.id}`}>
                                 <EditIcon />
                             </Link>
-                            <DeleteIcon />
+                            <form action={remove}><button type="submit" name="varietyID" value={variety.id}><DeleteIcon /></button></form>
                         </div>)}
                     <Link className="w-full text-center font-bold flex justify-center" href={`/admin/${productID}/new_variety`}><AddIcon />Nueva variedad</Link>
                 </div>
