@@ -37,8 +37,9 @@ export default async function Page({ params }: { params: { product: string } }) 
                 <div className="flex justify-center mb-4">
                     <h1 className="text-2xl">Variedades</h1>
                 </div>
-                <div className="flex flex-col gap-2 divide-x">
+                <div className="flex flex-col gap-2 divide-y">
                 {varieties.map((variety, i) => <div key={i} className="flex justify-center"><Link href={`/admin/${productID}/${variety.id}`}>{variety.name}</Link></div>)}
+                <Link className="w-full text-center" href={`/admin/${productID}/new_variety`}>Nueva variedad</Link>
                 </div>
             </div>
         </>

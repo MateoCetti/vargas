@@ -3,13 +3,14 @@ import db from "../../../../db";
 import { eq } from "drizzle-orm";
 import Link from "next/link";
 import BackIcon from "@/components/icons/back";
+import { redirect } from "next/navigation";
 
 export default async function Page() {
 
     async function create(formData: FormData) {
         'use server'
         const res = await db.insert(products).values({name: formData.get("name"), image: formData.get("image")} as product);
-        console.log(res)
+        redirect(`/admin`)
       }
     return (
         <form action={create}>

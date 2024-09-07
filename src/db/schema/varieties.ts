@@ -11,7 +11,7 @@ export const varieties = pgTable('varieties', {
     productId: integer("product_id").references(() => products.id).notNull(),
     img_src: text('img_src').notNull(),
     name: text('name').notNull(),
-    season: text('name').notNull(),
+    season: text('season').notNull(),
     availability: boolean("availability").notNull(),
     description: text("description").notNull(),
     price: doublePrecision("price").notNull() 
