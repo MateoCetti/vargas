@@ -1,12 +1,12 @@
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
+"use client"
+
+import { useEffect } from "react";
+import { logout } from "../../../auth";
 
 export default async function Page(){
-    async function sape(){
-        "use server"
-        cookies().delete("Authorization")
-    }
-    await sape()
-    redirect("/admin")
+    
+    useEffect(() => {
+        (async() => await logout())();
+    }, [])
     return <></>
 }

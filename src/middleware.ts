@@ -9,7 +9,7 @@ export async function middleware(request: NextRequest) {
     // get token
     const token = request.cookies.get("Authorization")?.value.replace("Bearer ", "") as string;
     // verify token
-    const secretKey = await importJWK(JSON.parse(process.env.JWK_KEY as string))
+    const secretKey = await importJWK(JSON.parse(process.env.JWK_KEY as string));
     const { payload, protectedHeader } = await jwtVerify(token, secretKey);
   } catch (e) {
     // token verification failed
