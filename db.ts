@@ -4,6 +4,7 @@ import 'dotenv/config'
 
 import { products, productRelations } from "@/db/schema/products";
 import { varieties, varietiesRelations, seasonEnum } from "@/db/schema/varieties";
+import { users } from "@/db/schema/user";
 
 const { Client } = pg
 const client = new Client(
@@ -18,6 +19,6 @@ const client = new Client(
 
 client.connect()
 
-const db = drizzle(client, {schema: {products, productRelations, varieties, varietiesRelations}});
+const db = drizzle(client, {schema: {products, productRelations, varieties, varietiesRelations, users}});
 
 export default db;
