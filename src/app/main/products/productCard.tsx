@@ -21,4 +21,3 @@ export default function ProductCard({ product}: { product: product}) {
         </>
     )
 }
-
