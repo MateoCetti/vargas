@@ -25,7 +25,7 @@ export default function BuyPage() {
                     </div>)}
             </div>
             <div className="w-full flex justify-center">
-                <Link href={'/buy/confirmPurchase'} className="text-center border rounded-full px-2 bg-green-700 text-white">Continuar</Link>
+                <Link href={'/main/buy/confirmPurchase'} className="text-center border rounded-full px-2 bg-green-700 text-white">Continuar</Link>
                 
             </div>
         </section>
