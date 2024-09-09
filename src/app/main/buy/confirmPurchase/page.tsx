@@ -3,45 +3,68 @@
 import { useState } from "react";
 
 import { useAppSelector } from "@/lib/hooks";
-import { productRelations } from "@/db/schema/products";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
     const cart = useAppSelector((s) => s.persistedReducer.productsState.cart);
     const [show, setShow] = useState<boolean>(false);
+    const router = useRouter();
+
+    async function buy(formData: FormData) {
+
+        const userData = {
+            name: `${formData.get("name")} ${formData.get("surname")}`,
+            phone: formData.get("phone") as string,
+            email: formData.get("email") as string,
+            province: formData.get("province") as string,
+            adress: formData.get("adress") as string,
+            number: formData.get("number") as string,
+            neighborhood: formData.get("neighborhood") as string,
+        }
+
+        let text = `¡Hola, Soy ${userData.name} y quiero hacer un pedido 🍋!\n\n`;
+        text += `Estaría necesitando:\n${cart.map(item => ` - ${item.item.quantity} ${item.item.name}\n`)}\n`;
+        text += `Datos personales:\n - Nombre y apellido: ${userData.name}\n - Telefono: ${userData.phone}\n`
+        text += ` - Email: ${userData.email}\n - Dirección: ${userData.adress}\n - Numbero: ${userData.number}\n`
+        text += ` - Provincia: ${userData.province}`
+
+        const url = `https://api.whatsapp.com/send/?phone=+5493516455611&text=${encodeURIComponent(text)}`
+        router.push(url)
+    }
 
     return (
         <section className="mt-20 mb-10 bg-white rounded-xl mx-2 pb-5">
-            <form action="" className="grid grid-cols-2 lg:grid-cols-4 mx-5 justify-items-center gap-2 ">
+            <form action={buy} className="grid grid-cols-2 lg:grid-cols-4 mx-5 justify-items-center gap-2 ">
                 <div className="col-span-2 flex flex-col ">
                     <label htmlFor="">Nombre</label>
-                    <input type="text" required className="p-3 border" />
+                    <input name="name" type="text" required className="p-3 border" />
                 </div>
                 <div className="col-span-2 flex flex-col ">
                     <label htmlFor="">Apellido</label>
-                    <input type="text" required className="p-3 border" />
+                    <input name="surname" type="text" required className="p-3 border" />
                 </div>
                 <div className="col-span-2 flex flex-col ">
                     <label htmlFor="">Telefono</label>
-                    <input type="text" required className="p-3 border" />
+                    <input name="phone" type="phone" required className="p-3 border" />
                 </div>
                 <div className="col-span-2 flex flex-col ">
                     <label htmlFor="">Email</label>
-                    <input type="text" required className="p-3 border" />
+                    <input name="email" type="email" required className="p-3 border" />
                 </div>
                 <div className="col-span-2 flex flex-col ">
                     <label htmlFor="">Provincia</label>
-                    <input type="text" required className="p-3 border" />
+                    <input name="province" type="text" required className="p-3 border" />
                 </div>
                 <div className="col-span-2 flex flex-col ">
                     <label htmlFor="">Calle</label>
-                    <input type="text" required className="p-3 border" />
+                    <input name="adress" type="text" required className="p-3 border" />
                 </div>
                 <div className="col-span-2 flex flex-col ">
                     <label htmlFor="">Numero</label>
-                    <input type="text" required className="p-3 border" />
+                    <input name="number" type="number" required className="p-3 border" />
                 </div>
                 <div className="col-span-2 flex flex-col ">
-                    <label htmlFor="">Barrio</label>
+                    <label className="neighborhood" htmlFor="">Barrio</label>
                     <input type="text" required className="p-3 border" />
                 </div>
 
@@ -68,8 +91,8 @@ export default function Page() {
                                     <p>{product.item.name}</p>
                                     <p>{product.item.quantity}</p>
                                     <p>{product.item.price}</p>
-                                    </div>
-                                )}
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
