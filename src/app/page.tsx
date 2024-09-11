@@ -21,14 +21,14 @@ export default function Home() {
         </div>
         <div></div>
       </section>
-      <div className="bg-green-600 relative">
-        <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" className="absolute -top-4">
+
+      <div className="bg-green-600 relative ">
+        <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" className="absolute -top-5 lg:-top-20">
           <path
             d="M0 43.9999C106.667 43.9999 213.333 7.99994 320 7.99994C426.667 7.99994 533.333 43.9999 640 43.9999C746.667 43.9999 853.333 7.99994 960 7.99994C1066.67 7.99994 1173.33 43.9999 1280 43.9999C1386.67 43.9999 1440 19.0266 1440 9.01329V100H0V43.9999Z"
             className="fill-current text-green-600"></path>
         </svg>
       </div>
-
       <section id="about-us" className="bg-green-600 h-500 pb-5 relative">
         <div className="flex justify-center h-500 bg-white">
           <Image src={"/naranja.png"} className="absolute -top-40" width={400} height={100} alt="sape"></Image>
@@ -45,23 +45,25 @@ export default function Home() {
         </div>
       </section>
       <div className="bg-white relative rotate-180">
-        <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 1440 99" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M0 43.9999C106.667 43.9999 213.333 7.99994 320 7.99994C426.667 7.99994 533.333 43.9999 640 43.9999C746.667 43.9999 853.333 7.99994 960 7.99994C1066.67 7.99994 1173.33 43.9999 1280 43.9999C1386.67 43.9999 1440 19.0266 1440 9.01329V100H0V43.9999Z"
             className="fill-current text-green-600"></path>
         </svg>
       </div>
-      <section className="flex flex-col bg-white py-10 gap-5 justify-center items-center">
-        <div className=" size-[350px] bg-auto bg-no-repeat rounded-xl shadow bg-center justify-self-center" style={{ backgroundImage: `URL(${naranjas.src}` }}></div>
-        <div className="flex flex-col mx-5 items-center justify-center">
-          <h1 className="text-6xl font-bold">Productos frescos y seleccionados</h1>
+      <section className="bg-white py-10 gap-5 justify-center items-center">
+        <div className="flex justify-center">
+          <div className="size-[350px] bg-auto bg-no-repeat rounded-xl shadow bg-center" style={{ backgroundImage: `URL(${naranjas.src}` }}></div>
+        </div>
+        <div className="flex flex-col px-4 items-center justify-center">
+          <h1 className="text-5xl font-bold">Productos frescos y seleccionados</h1>
           <p className="mt-5">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nisl massa,
             bibendum ut augue non, luctus luctus lorem. Nam at tincidunt velit.
             Nulla facilisis metus risus, id sagittis lorem dictum sit amet.
             Morbi tempor mauris quis purus scelerisque, bibendum pulvinar est ornare.
           </p>
-          <Link href={`/main/products`} className="p-3 border border-3 border-green-500 self-start rounded-xl font-bold mt-5">Ver nuestros productos</Link>
+          <Link href={`/main/products`} className="p-3 border border-3 border-green-500 self-start rounded-xl font-bold mt-5 hover:bg-green-600 hover:text-white">Ver nuestros productos</Link>
         </div>
       </section>
       <div className="bg-white relative">
@@ -79,7 +81,7 @@ export default function Home() {
         </div>
       </section>
       <div className="bg-white relative rotate-180">
-        <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 1440 99" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M0 43.9999C106.667 43.9999 213.333 7.99994 320 7.99994C426.667 7.99994 533.333 43.9999 640 43.9999C746.667 43.9999 853.333 7.99994 960 7.99994C1066.67 7.99994 1173.33 43.9999 1280 43.9999C1386.67 43.9999 1440 19.0266 1440 9.01329V100H0V43.9999Z"
             className="fill-current text-black"></path>
