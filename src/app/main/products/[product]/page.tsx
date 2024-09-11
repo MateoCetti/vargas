@@ -8,6 +8,8 @@ import { products } from "@/db/schema/products";
 
 import Variety from "./variety";
 
+import { getImageId } from "@/utils";
+
 export default async function Page({ params }: { params: { product: string } }) {
     const productID = Number(params.product);
     const product = await db.select().from(products).where(eq(products.id, productID))
@@ -17,7 +19,7 @@ export default async function Page({ params }: { params: { product: string } }) 
         <>
             <div className=" flex bg-white rounded-xl mb-5 mt-20 lg:mx-5 flex flex-col items-center py-5 px-1 lg:px-5">
                 <div className="flex flex-row w-full justify-center">
-                    <Image src={`https://drive.google.com/uc?id=${product[0].image}`} width={100} height={100} alt=""></Image>
+                    <Image src={`https://drive.google.com/uc?id=${getImageId(product[0].image)}`} width={100} height={100} alt=""></Image>
                     <h1 className="mt-10 text-xl">{product[0].name}</h1>
                 </div>
 

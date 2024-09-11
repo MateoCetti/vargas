@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { useAppSelector } from "@/lib/hooks";
+import { getImageId } from "@/utils";
 
 export default function BuyPage() {
     const cart = useAppSelector((s) => s.persistedReducer.productsState.cart);
@@ -19,7 +20,7 @@ export default function BuyPage() {
                 {cart.map((product, i) =>
                     <div key={i} className="col-span-4 grid grid-cols-4 justify-center items-center text-center justify-items-center">
                         <p>{product.item.name}</p>
-                        <Image src={`https://drive.google.com/uc?id=${product.item.picture}`} alt="image" width={50} height={"50"}></Image>
+                        <Image src={`https://drive.google.com/uc?id=${getImageId(product.item.picture)}`} alt="image" width={50} height={"50"}></Image>
                         <p>{product.item.quantity}</p>
                         {/* <p>{product.item.quantity*product.item.price}</p> TODO */}
                     </div>)}
