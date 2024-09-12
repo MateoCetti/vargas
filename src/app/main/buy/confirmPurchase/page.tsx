@@ -4,6 +4,8 @@ import { useState } from "react";
 
 import { useAppSelector } from "@/lib/hooks";
 import { useRouter } from "next/navigation";
+import BackIcon from "@/components/icons/back";
+import Link from "next/link";
 
 export default function Page() {
     const cart = useAppSelector((s) => s.persistedReducer.productsState.cart);
@@ -33,7 +35,12 @@ export default function Page() {
     }
 
     return (
-        <section className="mt-20 mb-10 bg-white rounded-xl mx-2 pb-5">
+        <section className="mt-20 mb-10 bg-white rounded-xl mx-2 py-5">
+            <div className="flex my-5 items-center justify-around">
+                <Link href={"/main/buy"}><BackIcon /></Link>
+                <h1 className="text-4xl">Ingresa tu info</h1>
+                <div></div>
+            </div>
             <form action={buy} className="grid grid-cols-2 lg:grid-cols-4 mx-5 justify-items-center gap-2 ">
                 <div className="col-span-2 flex flex-col ">
                     <label htmlFor="">Nombre</label>

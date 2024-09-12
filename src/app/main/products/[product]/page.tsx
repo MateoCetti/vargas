@@ -9,6 +9,8 @@ import { products } from "@/db/schema/products";
 import Variety from "./variety";
 
 import { getImageId } from "@/utils";
+import BackIcon from "@/components/icons/back";
+import Link from "next/link";
 
 export default async function Page({ params }: { params: { product: string } }) {
     const productID = Number(params.product);
@@ -18,9 +20,13 @@ export default async function Page({ params }: { params: { product: string } }) 
     return (
         <>
             <div className=" flex bg-white rounded-xl mb-5 mt-20 lg:mx-5 flex flex-col items-center py-5 px-1 lg:px-5">
-                <div className="flex flex-row w-full justify-center">
-                    <Image src={`https://drive.google.com/uc?id=${getImageId(product[0].image)}`} width={100} height={100} alt=""></Image>
-                    <h1 className="mt-10 text-xl">{product[0].name}</h1>
+                <div className="flex flex-row w-full justify-around">
+                    <Link className="self-center" href={"/main/products"}><BackIcon /></Link>
+                    <div className="flex self-center">
+                        <Image src={`https://drive.google.com/uc?id=${getImageId(product[0].image)}`} width={100} height={100} alt=""></Image>
+                        <h1 className="mt-10 text-xl">{product[0].name}</h1>
+                    </div>
+                    <div></div>
                 </div>
 
                 <div className="grid grid-cols-3 lg:grid-cols-4 w-full text-center text-xs lg:text-xl">
