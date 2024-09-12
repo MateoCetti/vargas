@@ -18,17 +18,11 @@ export default function Page() {
             name: `${formData.get("name")} ${formData.get("surname")}`,
             phone: formData.get("phone") as string,
             email: formData.get("email") as string,
-            province: formData.get("province") as string,
-            adress: formData.get("adress") as string,
-            number: formData.get("number") as string,
-            neighborhood: formData.get("neighborhood") as string,
         }
 
         let text = `¡Hola, Soy ${userData.name} y quiero hacer un pedido 🍋!\n\n`;
         text += `Estaría necesitando:\n${cart.map(item => ` - ${item.item.quantity} ${item.item.name}\n`)}\n`;
         text += `Datos personales:\n - Nombre y apellido: ${userData.name}\n - Telefono: ${userData.phone}\n`
-        text += ` - Email: ${userData.email}\n - Dirección: ${userData.adress}\n - Numbero: ${userData.number}\n`
-        text += ` - Provincia: ${userData.province}`
 
         const url = `https://api.whatsapp.com/send/?phone=+5493516455611&text=${encodeURIComponent(text)}`
         router.push(url)
@@ -57,22 +51,6 @@ export default function Page() {
                 <div className="col-span-2 flex flex-col ">
                     <label htmlFor="">Email</label>
                     <input name="email" type="email" required className="p-3 border" />
-                </div>
-                <div className="col-span-2 flex flex-col ">
-                    <label htmlFor="">Provincia</label>
-                    <input name="province" type="text" required className="p-3 border" />
-                </div>
-                <div className="col-span-2 flex flex-col ">
-                    <label htmlFor="">Calle</label>
-                    <input name="adress" type="text" required className="p-3 border" />
-                </div>
-                <div className="col-span-2 flex flex-col ">
-                    <label htmlFor="">Numero</label>
-                    <input name="number" type="number" required className="p-3 border" />
-                </div>
-                <div className="col-span-2 flex flex-col ">
-                    <label className="neighborhood" htmlFor="">Barrio</label>
-                    <input type="text" required className="p-3 border" />
                 </div>
 
 

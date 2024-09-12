@@ -37,7 +37,7 @@ export default function BuyPage() {
                 <h1 className="text-4xl text-center">Carrito</h1>
                 <div></div>
             </div>
-            <div className="grid grid-cols-5 justify-center items-center text-center bg-gray-200 mx-4 my-5">
+            <div className="grid grid-cols-5 justify-center items-center text-center bg-gray-200 mx-4 my-5 divide-y divide-black">
                 <div className="col-span-5 grid grid-cols-5 bg-green-700 text-white">
                     <p>Producto</p>
                     <div></div>
