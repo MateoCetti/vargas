@@ -39,7 +39,7 @@ export default function Variety({ variety }: { variety: variety }) {
 
     return (
         <>
-            <div className="col-span-3 lg:col-span-4 grid grid-cols-3 lg:grid-cols-4 w-full text-center">
+            <div className="col-span-3 lg:col-span-4 grid grid-cols-3 lg:grid-cols-4 w-full text-center items-center">
                 <p>{variety.name}</p>
                 <p>{variety.price}</p>
                 <div className="relative flex items-center justify-center">
