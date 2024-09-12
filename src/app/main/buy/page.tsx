@@ -39,11 +39,11 @@ export default function BuyPage() {
             </div>
             <div className="grid grid-cols-5 justify-center items-center text-center bg-gray-200 mx-4 my-5 divide-y divide-black">
                 <div className="col-span-5 grid grid-cols-5 bg-green-700 text-white">
-                    <p>Producto</p>
+                    <p className="uppercase">Producto</p>
                     <div></div>
-                    <p>Cantidad</p>
-                    <p>precio</p>
-                    <p>Borrar</p>
+                    <p className="uppercase">Cantidad</p>
+                    <p className="uppercase">precio</p>
+                    <p className="uppercase">Borrar</p>
                 </div>
                 {cart.map((product, i) =>
                     <div key={i} className="col-span-5 grid grid-cols-5 py-1 justify-center items-center text-center justify-items-center">
