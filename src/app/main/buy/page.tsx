@@ -6,7 +6,8 @@ import Link from "next/link";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { getImageId } from "@/utils";
 import BackIcon from "@/components/icons/back";
-import { Item, updateItem } from "@/lib/features/storeSlice";
+import { Item, updateItem, removeItem } from "@/lib/features/storeSlice";
+import DeleteIcon from "@/components/icons/delete";
 
 type Operation = "+" | "-"
 
@@ -36,15 +37,16 @@ export default function BuyPage() {
                 <h1 className="text-4xl text-center">Carrito</h1>
                 <div></div>
             </div>
-            <div className="grid grid-cols-4 justify-center items-center text-center bg-gray-200 mx-4 my-5">
-                <div className="col-span-4 grid grid-cols-4 bg-green-700 text-white">
+            <div className="grid grid-cols-5 justify-center items-center text-center bg-gray-200 mx-4 my-5">
+                <div className="col-span-5 grid grid-cols-5 bg-green-700 text-white">
                     <p>Producto</p>
                     <div></div>
-                    <p>Cantidad</p> {/*TODO: hacer quantity variable aca tmb*/}
+                    <p>Cantidad</p>
                     <p>precio</p>
+                    <p>Borrar</p>
                 </div>
                 {cart.map((product, i) =>
-                    <div key={i} className="col-span-4 grid grid-cols-4 justify-center items-center text-center justify-items-center">
+                    <div key={i} className="col-span-5 grid grid-cols-5 justify-center items-center text-center justify-items-center">
                         <p>{product.item.name}</p>
                         <Image src={`https://drive.google.com/uc?id=${getImageId(product.item.picture)}`} alt="image" width={50} height={"50"}></Image>
                         <div className="flex ">
@@ -64,10 +66,11 @@ export default function BuyPage() {
                             </button>
                         </div>
                         <p>{product.item.quantity * product.item.price}</p>
+                        <button onClick={()=> dispatch(removeItem(product))}><DeleteIcon /></button>
                     </div>)}
             </div>
             <div className="w-full flex justify-center">
-                <Link href={'/main/buy/confirmPurchase'} className="text-center border rounded-full px-2 bg-green-700 text-white">Continuar</Link>
+                <Link  href={cart.length !== 0 ? "/main/buy/confirmPurchase" : ""} className={`text-center border rounded-full px-2 ${cart.length !== 0 ? "bg-green-700" : "bg-gray-500"} text-white`}>Continuar</Link>
             </div>
         </section>
     )
