@@ -64,15 +64,15 @@ export default function Page() {
                         </button>
                     </h2>
                     <div id="accordion-collapse-body-2" className={`${!show && "hidden"}`} aria-labelledby="accordion-collapse-heading-2">
-                        <div className="p-5 border flex flex-col text-center">
-                            <div className="flex flex-row gap-4 w-full justify-around">
+                        <div className="p-5 border grid grid-cols-3 text-center">
+                            <div className="tex-center col-span-3 grid grid-cols-3">
                                 <p>Nombre</p>
                                 <p>Cantidad</p>
                                 <p>Total</p>
                                 <br />
                             </div>
                             {cart.map((product, i) =>
-                                <div key={i} className="flex flex-row gap-4 w-full justify-around">
+                                <div key={i} className="text-center col-span-3 grid grid-cols-3">
                                     <p>{product.item.name}</p>
                                     <p>{product.item.quantity}</p>
                                     <p>{product.item.price}</p>
