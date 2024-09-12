@@ -41,8 +41,8 @@ export default function Navbar({ type }: {type: "admin" | "user"}) {
                     :
                     
                     menuItems.map((element, index) =>
-                        <li key={index} className="hover:font-bold hover:underline decoration-green-800 decoration-2 transition duration-300 ease-in-out hover:scale-110">
-                            <Link
+                        <li key={index} className="group transition duration-300 ease-in-out hover:scale-110">
+                            <Link className="group-hover:bg-green-600 p-2 rounded rounded-l group-hover:text-white"
                                 key={index}
                                 href={element.href}>{element.name}
                             </Link>
