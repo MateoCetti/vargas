@@ -46,7 +46,7 @@ export default function BuyPage() {
                     <p>Borrar</p>
                 </div>
                 {cart.map((product, i) =>
-                    <div key={i} className="col-span-5 grid grid-cols-5 justify-center items-center text-center justify-items-center">
+                    <div key={i} className="col-span-5 grid grid-cols-5 py-1 justify-center items-center text-center justify-items-center">
                         <p>{product.item.name}</p>
                         <Image src={`https://drive.google.com/uc?id=${getImageId(product.item.picture)}`} alt="image" width={50} height={"50"}></Image>
                         <div className="flex ">
@@ -68,6 +68,7 @@ export default function BuyPage() {
                         <p>{product.item.quantity * product.item.price}</p>
                         <button onClick={()=> dispatch(removeItem(product))}><DeleteIcon /></button>
                     </div>)}
+                    <div className="col-span-5 justify-center py-1" ><Link href={"/main/products"}>--- ¡Agregar mas productos 🍋! ---</Link></div>
             </div>
             <div className="w-full flex justify-center">
                 <Link  href={cart.length !== 0 ? "/main/buy/confirmPurchase" : ""} className={`text-center border rounded-full px-2 ${cart.length !== 0 ? "bg-green-700" : "bg-gray-500"} text-white`}>Continuar</Link>
