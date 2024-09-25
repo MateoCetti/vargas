@@ -15,9 +15,9 @@ export default function Footer() {
             </div>
             <div className="my-10">
                 <h1 className="text-xl">Contactanos</h1>
-                <p>Federico Vargas</p>
+                <p>Federico</p>
                 <p>+54 9 351-3252930</p>
-                <p>Lucas Vargas</p>
+                <p>Lucas</p>
                 <p>+54 9 351-3154814</p>
             </div>
             <div className="my-10">
