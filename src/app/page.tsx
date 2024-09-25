@@ -36,7 +36,7 @@ export default function Home() {
         <div className="flex flex-col items-center h-full mx-5">
           <h1 className="text-6xl mt-[200px] font-bold">Una empresa, un legado de familia.</h1>
           <p className="mt-5">
-          Conozca más acerca de lo que fue, y es Vargas una empresa dedicada al comercio y cuidado de alimentos frescos que llegan a nuestros hogares para sacar una sonrisa en la mesa de las familias pudiendo así con cada producto de primera calidad acercar a los lugares en donde se elaboran los mismos en cada rincon de nuestro país.
+            Conozca más acerca de lo que fue, y es Vargas una empresa dedicada al comercio y cuidado de alimentos frescos que llegan a nuestros hogares para sacar una sonrisa en la mesa de las familias pudiendo así con cada producto de primera calidad acercar a los lugares en donde se elaboran los mismos en cada rincon de nuestro país.
           </p>
           <Link href={`/main/about_us`} className="p-3 text-xl self-start lg:self-center border border-black border-2 rounded rounded-l mt-6 hover:bg-black hover:text-white"> Lea nuestra historia de origen</Link>
         </div>
@@ -55,7 +55,7 @@ export default function Home() {
         <div className="flex flex-col px-4 items-center justify-center">
           <h1 className="text-5xl font-bold">Productos frescos y seleccionados</h1>
           <p className="mt-5">
-          Conozca acerca de los productos que comercializamos buscando siempre cuidar su economía sin dejar de lado la calidad donde hacemos mucha hincapié para que puedan sentir el amor que transmitimos a través de los mismos.
+            Conozca acerca de los productos que comercializamos buscando siempre cuidar su economía sin dejar de lado la calidad donde hacemos mucha hincapié para que puedan sentir el amor que transmitimos a través de los mismos.
           </p>
           <Link href={`/main/products`} className="p-3 border border-3 border-green-500 self-start lg:self-center rounded-xl font-bold mt-5 hover:bg-green-600 hover:text-white">Ver nuestros productos</Link>
         </div>
@@ -70,8 +70,12 @@ export default function Home() {
       <section className="text-white flex flex-col bg-black py-10 gap-5 justify-center items-center">
         <h1 className="text-6xl text-center">¡Seguinos en nuestras redes!</h1>
         <div className="grid grid-cols-2 gap-10">
-          <FacebookIcon fill="#fff" />
-          <InstagramIcon fill="#fff" />
+          <a target="_blank" href="https://www.facebook.com/vargas.cba" >
+            <FacebookIcon fill="#fff" />
+          </a>
+          <a target="_blank" href="https://www.instagram.com/vargas.productosfrescos/">
+            <InstagramIcon fill="#fff" />
+          </a>
         </div>
       </section>
       <div className="bg-white relative rotate-180">
