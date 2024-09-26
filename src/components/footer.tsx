@@ -39,6 +39,6 @@ export default function Footer() {
                     </a>
                 </div>
             </div>
-            <div className="col-span-full bg-green-900 tex-center text-white text-sm py-4 mt-10">© 2023 <b>Vargas</b> - Todos los Derechos Reservados. -</div>
+            <div className="col-span-full bg-green-900 tex-center text-white text-sm py-4 mt-10">© {new Date().getFullYear()} <b>Vargas</b> - Todos los Derechos Reservados. -</div>
         </footer>)
 }
