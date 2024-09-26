@@ -11,7 +11,7 @@ export default function ProductCard({ product}: { product: product}) {
     
     return (
         <>
-            <div className="group border border-gray bg-white lg:mx-2 lg:my-2 w-screen lg:w-full hover:bg-green-700 flex flex-col items-center"
+            <div className="group border border-gray bg-white lg:mx-2 lg:my-2 w-screen lg:w-full hover:bg-green-700 flex flex-col items-center cursor-pointer"
                 onClick={() => { router.push(`/main/products/${product.id}`) }}>
                 {/* TODO: Change to set only de google drive image ID on DB and hardcode url here. */}
                 <Image width={300} height={200} src={`https://drive.google.com/uc?id=${getImageId(product.image)}`} 
