@@ -6,15 +6,22 @@ import Footer from "@/components/footer";
 import FacebookIcon from "@/components/icons/facebook";
 import InstagramIcon from "@/components/icons/instagram";
 
+import localFont from 'next/font/local'
+
+const myFont = localFont({
+  src: '../../public/fonts/choco.woff2',
+  display: 'swap',
+  variable: '--font-choco',
+})
+
 export default function Home() {
   return (
-    <main className="scroll-smooth font-serif">
+    <main>
       <section className="h-[800px] flex flex-col justify-between items-center bg-auto bg-no-repeat bg-center" style={{ backgroundImage: `URL(${photo.src}` }}>
         <Image src={"/logo_3.png"} width={100} height={100} alt={""}></Image>
         <div className="">
-          <h1 className="text-white text-6xl text-center">Vargas Productos frescos</h1>
-          <p className="text-white text-center text-xl">Somos comerciantes de productos frutihorticolas</p>
-          <div className="flex justify-center gap-4 mt-2">
+          <h1 className={`text-white text-6xl text-center ${myFont.className}`}>Vargas Productos frescos</h1>
+          <div className="flex justify-center gap-4 mt-10">
             <Link href={`/main/products`} className="p-2 bg-green-600 text-white rounded rounded-l hover:bg-white hover:text-black">Productos</Link>
             <Link href={`#about-us`} className="p-2 border border-2 text-white rounded rounded-l hover:bg-white hover:text-black">Sobre nosotros</Link>
           </div>
@@ -34,11 +41,11 @@ export default function Home() {
           <Image src={"/naranja.png"} className="absolute -top-40" width={400} height={100} alt="sape"></Image>
         </div>
         <div className="flex flex-col items-center h-full mx-5">
-          <h1 className="text-6xl mt-[200px] font-bold">Una empresa, un legado de familia.</h1>
+          <h1 className={`text-5xl mt-[200px] font-bold ${myFont.className}`}>Una empresa, un legado de familia.</h1>
           <p className="mt-5">
             Conozca más acerca de lo que fue, y es Vargas una empresa dedicada al comercio y cuidado de alimentos frescos que llegan a nuestros hogares para sacar una sonrisa en la mesa de las familias pudiendo así con cada producto de primera calidad acercar a los lugares en donde se elaboran los mismos en cada rincon de nuestro país.
           </p>
-          <Link href={`/main/about_us`} className="p-3 text-xl self-start lg:self-center border border-black border-2 rounded rounded-l mt-6 hover:bg-black hover:text-white"> Lea nuestra historia de origen</Link>
+          <Link href={`/main/about_us`} className="p-3 text-xl self-start lg:self-center border border-black border-2 rounded rounded-l mt-6 hover:bg-black hover:text-white"> Ver mas</Link>
         </div>
       </section>
       <div className="bg-white relative rotate-180">
@@ -49,11 +56,11 @@ export default function Home() {
         </svg>
       </div>
       <section className="bg-white py-10 gap-5 justify-center items-center">
-        <div className="flex justify-center">
+        <div className="flex justify-center mb-10">
           <div className="size-[350px] bg-auto bg-no-repeat rounded-xl shadow bg-center" style={{ backgroundImage: `URL(${naranjas.src}` }}></div>
         </div>
         <div className="flex flex-col px-4 items-center justify-center">
-          <h1 className="text-5xl font-bold">Productos frescos y seleccionados</h1>
+          <h1 className={`text-5xl font-bold ${myFont.className}`}>Productos frescos y seleccionados</h1>
           <p className="mt-5">
             Conozca acerca de los productos que comercializamos buscando siempre cuidar su economía sin dejar de lado la calidad donde hacemos mucha hincapié para que puedan sentir el amor que transmitimos a través de los mismos.
           </p>
@@ -68,7 +75,7 @@ export default function Home() {
         </svg>
       </div>
       <section className="text-white flex flex-col bg-black py-10 gap-5 justify-center items-center">
-        <h1 className="text-6xl text-center">¡Seguinos en nuestras redes!</h1>
+        <h1 className={`text-3 text-center ${myFont.className}`}>¡Seguinos en nuestras redes!</h1>
         <div className="grid grid-cols-2 gap-10">
           <a target="_blank" href="https://www.facebook.com/vargas.cba" >
             <FacebookIcon fill="#fff" />
