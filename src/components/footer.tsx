@@ -35,7 +35,7 @@ export default function Footer() {
                         <FacebookIcon viewBox="0 0 50 50" width={25} />
                     </a>
                     <a target="_blank" href="https://www.instagram.com/vargas.productosfrescos/">
-                        <InstagramIcon viewBox="0 0 50 50" width={25} />
+                        <InstagramIcon width={25} />
                     </a>
                 </div>
             </div>
