@@ -55,12 +55,12 @@ export default function Home() {
             className="fill-current text-green-600"></path>
         </svg>
       </div>
-      <section className="bg-white py-10 gap-5 justify-center items-center">
+      <section className="bg-white py-10 justify-center items-center">
         <div className="flex justify-center mb-10">
           <div className="size-[350px] bg-auto bg-no-repeat rounded-xl shadow bg-center" style={{ backgroundImage: `URL(${naranjas.src}` }}></div>
         </div>
         <div className="flex flex-col px-4 items-center justify-center">
-          <h1 className={`text-5xl font-bold ${myFont.className}`}>Productos frescos y seleccionados</h1>
+          <h1 className={`text-4xl font-bold ${myFont.className}`}>Productos frescos y seleccionados</h1>
           <p className="mt-5">
             Conozca acerca de los productos que comercializamos buscando siempre cuidar su economía sin dejar de lado la calidad donde hacemos mucha hincapié para que puedan sentir el amor que transmitimos a través de los mismos.
           </p>
