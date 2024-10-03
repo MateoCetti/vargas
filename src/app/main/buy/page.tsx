@@ -31,7 +31,7 @@ export default function BuyPage() {
         dispatch(updateItem(newItem));
     }
     return (
-        <section className="mt-20 mb-10 bg-white mx-2 py-5">
+        <section className="mt-20 mb-10 bg-white mx-2 py-5 h-full lg:h-[600px] flex flex-col">
             <div className="flex justify-around my-5 items-center">
                 <Link href={"/main/products"}><BackIcon /></Link>
                 <h1 className="text-4xl text-center">Carrito</h1>
