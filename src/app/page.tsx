@@ -16,7 +16,7 @@ const myFont = localFont({
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-white">
       <section className="h-[800px] flex flex-col justify-between items-center bg-auto bg-no-repeat bg-center" style={{ backgroundImage: `URL(${photo.src}` }}>
         <Image src={"/logo_3.png"} width={100} height={100} alt={""}></Image>
         <div className="">
