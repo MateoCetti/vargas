@@ -22,7 +22,7 @@ export default async function Page({ params }: { params: { product: string } }) 
             <div className=" flex bg-white rounded-xl mb-5 mt-20 lg:mx-5 flex flex-col items-center py-5 px-1 lg:px-5">
                 <div className="flex flex-row w-full justify-around">
                     <Link className="self-center" href={"/main/products"}><BackIcon /></Link>
-                    <div className="flex self-center">
+                    <div className="flex self-center mb-10 gap-5">
                         <Image src={`https://drive.google.com/uc?id=${getImageId(product[0].image)}`} width={100} height={100} alt=""></Image>
                         <h1 className="mt-10 text-xl">{product[0].name}</h1>
                     </div>
