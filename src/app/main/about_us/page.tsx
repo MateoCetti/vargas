@@ -16,7 +16,7 @@ export default function AboutUsPage() {
                 Con el paso del tiempo y la llegada de nuevas tecnologías, se empezaron a utilizar autoelevadores para agilizar la carga y descarga de mercancías, lo que permitió llegar a más clientes con mayor eficacia y eficiencia.
             </p>
             <p className="text-center p-4">
-                En la última década, la participación de sus hijos Lucas, Federico y Melina Vargas ha traído nuevas ideas y un renovado ritmo en la comercialización, haciendo crecer el negocio familiar e incorporando productos de diversas zonas de producción. Así, nos hemos convertido en una empresa que ofrece más productos, más servicios y una mayor calidad.
+                En la última década, la participación de sus hijos Lucas y Federico han traído nuevas ideas y un renovado ritmo en la comercialización, haciendo crecer el negocio familiar e incorporando productos de diversas zonas de producción. Así, nos hemos convertido en una empresa que ofrece más productos, más servicios y una mayor calidad.
             </p>
             <p className="text-center p-4">
                 A pesar de estos avances y logros, nunca olvidamos nuestras raíces y cómo comenzó esta historia de comercialización de frutas y verduras. Agradecemos infinitamente a Dios, a nuestros proveedores, a nuestros empleados, a nuestra creciente clientela y al consumidor final. Sin su confianza y apoyo, esta historia no podría ser contada.
