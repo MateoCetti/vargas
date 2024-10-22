@@ -8,11 +8,32 @@ import { getImageId } from "@/utils";
 import BackIcon from "@/components/icons/back";
 import { Item, updateItem, removeItem } from "@/lib/features/storeSlice";
 import DeleteIcon from "@/components/icons/delete";
+import { useEffect, useState } from "react";
+import localFont from "next/font/local";
 
 type Operation = "+" | "-"
 
+const myFont = localFont({
+    src: '../../../../public/fonts/choco.woff2',
+    display: 'swap',
+    variable: '--font-choco',
+  })
+
 export default function BuyPage() {
     const cart = useAppSelector((s) => s.persistedReducer.productsState.cart);
+    const [price, setPrice] = useState<Number>(updatePrice());
+
+    useEffect(()=>{
+        setPrice(updatePrice())
+    }, [cart])
+
+    function updatePrice(): Number{
+        let newPrice = 0;
+        cart.forEach((item) => {
+            newPrice+=item.item.price*item.item.quantity;
+        })
+        return newPrice;
+    }
 
     const dispatch = useAppDispatch()
 
@@ -34,7 +55,7 @@ export default function BuyPage() {
         <section className="mt-20 mb-10 bg-white mx-2 py-5 h-full lg:h-[600px] flex flex-col">
             <div className="flex justify-around my-5 items-center">
                 <Link href={"/main/products"}><BackIcon /></Link>
-                <h1 className="text-4xl text-center">Carrito</h1>
+                <h1 className={`text-4xl text-center ${myFont.className}`}>Carrito</h1>
                 <div></div>
             </div>
             <div className="grid grid-cols-5 justify-center items-center text-center bg-gray-200 mx-4 my-5 divide-y divide-black">
@@ -68,6 +89,7 @@ export default function BuyPage() {
                         <p>{product.item.quantity * product.item.price}</p>
                         <button onClick={()=> dispatch(removeItem(product))}><DeleteIcon /></button>
                     </div>)}
+                    <div className="col-span-5 justify-center py-1 " > <p><b>Total:</b> {price.toString()}</p></div>
                     <div className="col-span-5 justify-center py-1" ><Link href={"/main/products"}>--- ¡Agregar mas productos 🍋! ---</Link></div>
             </div>
             <div className="w-full flex justify-center">
