@@ -32,7 +32,7 @@ export default function Page() {
         <section className="mt-20 mb-10 bg-white rounded-xl mx-2 py-5">
             <div className="flex my-5 items-center justify-around">
                 <Link href={"/main/buy"}><BackIcon /></Link>
-                <h1 className="text-4xl">Ingresa tu info</h1>
+                <h1 className="text-4xl">Llena el formulario</h1>
                 <div></div>
             </div>
             <form action={buy} className="grid grid-cols-2 lg:grid-cols-4 mx-5 justify-items-center gap-2 ">
