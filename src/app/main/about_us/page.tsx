@@ -40,7 +40,7 @@ export default function AboutUsPage() {
                             <EyeIcon fill="#16a34a" width={50} height={50} />
                         </div>
                         <h1 className="text-xl font-bold m-5">Visión</h1>
-                        <p>er reconocidos como líderes en nuestra industria, aprovechando más de [número] años de experiencia para innovar y ofrecer soluciones de calidad que superen las expectativas de nuestros clientes. Nos comprometemos a mantener nuestra tradición de excelencia, adaptándonos a los cambios del mercado y promoviendo un futuro sostenible que beneficie a nuestra comunidad y al medio ambiente.</p>
+                        <p>Ser reconocidos como líderes en nuestra industria, aprovechando más de [número] años de experiencia para innovar y ofrecer soluciones de calidad que superen las expectativas de nuestros clientes. Nos comprometemos a mantener nuestra tradición de excelencia, adaptándonos a los cambios del mercado y promoviendo un futuro sostenible que beneficie a nuestra comunidad y al medio ambiente.</p>
                     </div>
                     <div className="max-w-[400px] flex flex-col justify-center items-center self-start">
                         <div className="border border-2 border-[#16a34a] rounded-full p-5 my-5">
