@@ -20,7 +20,7 @@ export default function Home() {
       <section className="h-[800px] flex flex-col justify-between items-center bg-auto bg-no-repeat bg-center" style={{ backgroundImage: `URL(${photo.src}` }}>
         <Image src={"/logo_3.png"} width={100} height={100} alt={""}></Image>
         <div className="">
-          <h1 className={`text-white text-6xl text-center ${myFont.className}`}>Vargas Productos frescos</h1>
+          <h1 className={`text-white text-6xl text-center ${myFont.className}`}>Vargas Productos Frescos</h1>
           <div className="flex justify-center gap-4 mt-10">
             <Link href={`/main/products`} className="p-2 bg-green-600 text-white rounded rounded-l hover:bg-white hover:text-black">Productos</Link>
             <Link href={`#about-us`} className="p-2 border border-2 text-white rounded rounded-l hover:bg-white hover:text-black">Sobre nosotros</Link>

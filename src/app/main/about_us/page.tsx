@@ -32,7 +32,7 @@ export default function AboutUsPage() {
                         <div className="border border-2 border-[#16a34a] rounded-full p-5 my-5">
                             <MountainIcon fill="#16a34a" width={50} height={50} />
                         </div>
-                        <h1 className="text-xl font-bold m-5">misión</h1>
+                        <h1 className="text-xl font-bold m-5">Misión</h1>
                         <p>Nuestra misión es proporcionar productos y servicios de alta calidad, basados en décadas de experiencia y conocimiento en la industria. Nos comprometemos a construir relaciones de confianza con nuestros clientes y socios, impulsando la innovación y la excelencia. Además, buscamos contribuir al bienestar de nuestra comunidad y al cuidado del medio ambiente a través de prácticas sostenibles y responsables.</p>
                     </div>
                     <div className="max-w-[400px] flex flex-col justify-center items-center self-start">
