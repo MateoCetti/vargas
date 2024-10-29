@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function AboutUsPage() {
     return (
-        <section className="mt-20 mb-6 bg-white shadow py-5">
+        <section className="mt-20 mb-6 bg-white shadow pb-5">
             <div className="bg-green-900 text-center py-4 text-white text-xl">Una empresa - Un legado de familia.</div>
             <h1 className="text-center text-4xl font-bold my-10">Nuestra historia</h1>
             <p className="mb-24">{text}</p>
