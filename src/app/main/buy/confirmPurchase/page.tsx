@@ -6,6 +6,13 @@ import { useAppSelector } from "@/lib/hooks";
 import { useRouter } from "next/navigation";
 import BackIcon from "@/components/icons/back";
 import Link from "next/link";
+import localFont from "next/font/local";
+
+const myFont = localFont({
+    src: '../../../../../public/fonts/choco.woff2',
+    display: 'swap',
+    variable: '--font-choco',
+})
 
 export default function Page() {
     const cart = useAppSelector((s) => s.persistedReducer.productsState.cart);
@@ -21,8 +28,9 @@ export default function Page() {
         }
 
         let text = `¡Hola, Soy ${userData.name} y quiero hacer un pedido 🍋!\n\n`;
-        text += `Estaría necesitando:\n${cart.map(item => ` - ${item.item.quantity} ${item.item.name}\n`)}\n`;
-        text += `Datos personales:\n - Nombre y apellido: ${userData.name}\n - Telefono: ${userData.phone}\n`
+        text += `Estaría necesitando:\n\n`;
+        cart.forEach(item => text +=` - ${item.item.quantity} ${item.item.name}\n`);
+        text += `\nDatos personales:\n - Nombre y apellido: ${userData.name}\n - Telefono: ${userData.phone}\n`
 
         const url = `https://api.whatsapp.com/send/?phone=+5493516455611&text=${encodeURIComponent(text)}`
         router.push(url)
@@ -32,7 +40,7 @@ export default function Page() {
         <section className="mt-20 mb-10 bg-white rounded-xl mx-2 py-5">
             <div className="flex my-5 items-center justify-around">
                 <Link href={"/main/buy"}><BackIcon /></Link>
-                <h1 className="text-4xl">Llena el formulario</h1>
+                <h1 className={`text-4xl ${myFont.className}`}>Llena el formulario</h1>
                 <div></div>
             </div>
             <form action={buy} className="grid grid-cols-2 lg:grid-cols-4 mx-5 justify-items-center gap-2 ">
@@ -68,7 +76,7 @@ export default function Page() {
                             <div className="tex-center col-span-3 grid grid-cols-3">
                                 <p>Nombre</p>
                                 <p>Cantidad</p>
-                                <p>Total</p>
+                                <p>Subtotal</p>
                                 <br />
                             </div>
                             {cart.map((product, i) =>
