@@ -6,7 +6,7 @@ const myFont = localFont({
     src: '../../../../public/fonts/choco.woff2',
     display: 'swap',
     variable: '--font-choco',
-  })
+})
 
 export default function FindUsPage() {
     return (
@@ -27,6 +27,9 @@ export default function FindUsPage() {
                         allowFullScreen
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade" />
+                </div>
+                <div className="lg:col-span-2 lg:px-5">
+                    <iframe className="w-full h-[400px] lg:h-[720px]" src="https://www.youtube.com/embed/peV6VhmQV0o" ></iframe>
                 </div>
             </div>
         </section>
