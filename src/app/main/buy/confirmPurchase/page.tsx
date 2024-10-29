@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useAppSelector } from "@/lib/hooks";
 import { useRouter } from "next/navigation";
@@ -18,6 +18,19 @@ export default function Page() {
     const cart = useAppSelector((s) => s.persistedReducer.productsState.cart);
     const [show, setShow] = useState<boolean>(false);
     const router = useRouter();
+
+    const [totalQuantity, setTotalQuantity] = useState<Number>(0);
+    const [totalPrice, setTotalPrice] = useState<Number>(0);
+
+    useEffect(() => {
+        let [quantity, price] = [0, 0];
+        cart.forEach(item => {
+            quantity += item.item.quantity,
+            price += item.item.price
+        })
+        setTotalQuantity(quantity)
+        setTotalPrice(price)
+    }, [])
 
     async function buy(formData: FormData) {
 
@@ -72,20 +85,24 @@ export default function Page() {
                         </button>
                     </h2>
                     <div id="accordion-collapse-body-2" className={`${!show && "hidden"}`} aria-labelledby="accordion-collapse-heading-2">
-                        <div className="p-5 border grid grid-cols-3 text-center">
-                            <div className="tex-center col-span-3 grid grid-cols-3">
+                        <div className="p-5 border grid grid-cols-3">
+                            <div className={`col-span-3 py-3 grid grid-cols-3 bg-green-800 text-white font-bold justify-items-center ${myFont.className}`}>
                                 <p>Nombre</p>
                                 <p>Cantidad</p>
                                 <p>Subtotal</p>
-                                <br />
                             </div>
                             {cart.map((product, i) =>
-                                <div key={i} className="text-center col-span-3 grid grid-cols-3">
+                                <div key={i} className="text-center col-span-3 py-2 grid grid-cols-3">
                                     <p>{product.item.name}</p>
                                     <p>{product.item.quantity}</p>
                                     <p>{product.item.price}</p>
                                 </div>
                             )}
+                            <div className="col-span-3 grid grid-cols-3 py-2 text-center font-bold bg-green-800 text-white">
+                                <p>Total: </p>
+                                <p>{totalQuantity.toString()}</p>
+                                <p>{totalPrice.toString()}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
