@@ -1,13 +1,21 @@
 import EyeIcon from "@/components/icons/eye";
 import MountainIcon from "@/components/icons/mountain";
 import StarIcon from "@/components/icons/star";
+import localFont from "next/font/local";
 import Image from "next/image";
+
+const myFont = localFont({
+    src: '../../../../public/fonts/choco.woff2',
+    display: 'swap',
+    variable: '--font-choco',
+})
+
 
 export default function AboutUsPage() {
     return (
         <section className="mt-20 mb-6 bg-white shadow pb-5">
-            <div className="bg-green-900 text-center py-4 text-white text-xl">Una empresa - Un legado de familia.</div>
-            <h1 className="text-center text-4xl font-bold my-10">Nuestra historia</h1>
+            <div className={`bg-green-900 text-center py-4 text-white text-xl ${myFont.className}`}>Una empresa - Un legado de familia.</div>
+            <h1 className={`text-center text-4xl font-bold my-10 ${myFont.className}`}>Nuestra historia</h1>
             <p className="mb-24">{text}</p>
 
             <div className="bg-green-600 relative">
@@ -26,7 +34,7 @@ export default function AboutUsPage() {
             </div>
 
             <div>
-                <h1 className="text-4xl text-center font-bold my-10">Nuestra empresa</h1>
+                <h1 className={`text-4xl text-center font-bold my-10 ${myFont.className}`}>Nuestra empresa</h1>
                 <div className="flex flex-col text-center lg:flex-row justify-center items-top gap-32 lg:gap-32 mb-20 self-start">
                     <div className="max-w-[400px] flex flex-col justify-center items-center">
                         <div className="border border-2 border-[#16a34a] rounded-full p-5 my-5">
@@ -67,7 +75,7 @@ export default function AboutUsPage() {
                 </svg>
             </div>
 
-            <h1 className="text-4xl font-bold mt-10 text-center my-5">Los directivos</h1>
+            <h1 className={`text-4xl font-bold mt-10 text-center my-5 ${myFont.className}`}>Los directivos</h1>
             <div className="flex flex-col lg:flex-row gap-10 justify-center items-center mb-10">
                 <div className="relative">
                     <Image alt="" src={"/adrian.jpeg"} width={250} height={100}></Image>

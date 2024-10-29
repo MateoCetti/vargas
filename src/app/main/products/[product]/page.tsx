@@ -11,6 +11,13 @@ import Variety from "./variety";
 import { getImageId } from "@/utils";
 import BackIcon from "@/components/icons/back";
 import Link from "next/link";
+import localFont from "next/font/local";
+
+const myFont = localFont({
+    src: '../../../../../public/fonts/choco.woff2',
+    display: 'swap',
+    variable: '--font-choco',
+})
 
 export default async function Page({ params }: { params: { product: string } }) {
     const productID = Number(params.product);
@@ -24,7 +31,7 @@ export default async function Page({ params }: { params: { product: string } }) 
                     <Link className="self-center" href={"/main/products"}><BackIcon /></Link>
                     <div className="flex self-center mb-10 gap-5">
                         <Image src={`https://drive.google.com/uc?id=${getImageId(product[0].image)}`} width={100} height={100} alt=""></Image>
-                        <h1 className="mt-10 text-xl">{product[0].name}</h1>
+                        <h1 className={`mt-10 text-xl ${myFont.className}`}>{product[0].name}</h1>
                     </div>
                     <div></div>
                 </div>
