@@ -22,7 +22,7 @@ export default function Navbar({ type }: { type: "admin" | "user" }) {
     return (
         <nav className={`grid grid-cols-3 p-2 ${type === "admin" ? "bg-blue-500" : "bg-white"} shadow-md fixed top-0 w-screen z-40`}>
             <Drawer items={menuItems} />
-            <Link href={"/"}>
+            <Link href={`${type === "admin" ? "" : "/"}`}>
                 <Image
                     src="/logo_1.png"
                     width={94}
