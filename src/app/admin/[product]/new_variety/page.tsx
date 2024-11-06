@@ -68,7 +68,7 @@ export default async function Page({ params }: { params: { product: string } }) 
                     </div>
                     <div className="flex flex-col justify-center">
                         <label htmlFor="">Disponibilidad</label>
-                        <input name="availability" required type="checkbox" className="border w-full" />
+                        <input name="availability" type="checkbox" className="border w-full" />
                     </div>
                 </div>
                 <div className="mt-5 bg-white rounded-xl mx-5 px-4 flex justify-around py-2">
