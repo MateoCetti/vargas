@@ -33,7 +33,7 @@ export const cartSlice = createSlice({
         return;
       }
       
-      state.cart.splice(itemIndex);
+      state.cart.splice(itemIndex, 1);
       
       if (action.payload.item.quantity !== 0) {
         state.cart.push(action.payload);
@@ -43,11 +43,10 @@ export const cartSlice = createSlice({
     removeItem: (state, action: PayloadAction<Item>) => {
       const itemIndex = state.cart.findIndex((v) => v.id === action.payload.id);
       const itemExists = itemIndex !== -1;
-      console.log(itemIndex)
 
       if(!itemExists) return;
 
-      state.cart.splice(itemIndex)
+      state.cart.splice(itemIndex, 1)
     }
 
   }
