@@ -47,8 +47,7 @@ export default async function Page({ params }: { params: { product: string } }) 
         } catch (error) {
             
         }
-        revalidatePath(`/admin/`);
-        redirect(`/admin`)
+        revalidatePath(`/admin/${productID}`);
     }
 
     return (
