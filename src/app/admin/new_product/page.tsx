@@ -4,12 +4,14 @@ import { eq } from "drizzle-orm";
 import Link from "next/link";
 import BackIcon from "@/components/icons/back";
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 
 export default async function Page() {
 
     async function create(formData: FormData) {
         'use server'
         const res = await db.insert(products).values({name: formData.get("name"), image: formData.get("image")} as product);
+        revalidatePath(`/admin`)
         redirect(`/admin`)
       }
     return (

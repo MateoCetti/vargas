@@ -10,6 +10,8 @@ import AddIcon from "@/components/icons/add";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 
+export const fetchCache = 'force-no-store';
+
 export default async function Page({ params }: { params: { product: string } }) {
     const productID = Number(params.product);
     const product = await db.query.products.findFirst({
@@ -33,6 +35,7 @@ export default async function Page({ params }: { params: { product: string } }) 
         } catch (error) {
             console.log(error)
         }
+        revalidatePath(`/admin`)
         redirect(`/admin`)
     }
 
@@ -45,6 +48,7 @@ export default async function Page({ params }: { params: { product: string } }) 
             
         }
         revalidatePath(`/admin/`);
+        redirect(`/admin`)
     }
 
     return (

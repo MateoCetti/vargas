@@ -7,6 +7,8 @@ import { products as Products } from "@/db/schema/products";
 import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 
+export const fetchCache = 'force-no-store';
+
 export default async function Page() {
     const products = await db.query.products.findMany();
     const rowClassName = "flex w-full h-10 items-center justify-around";

@@ -5,6 +5,7 @@ import { varieties, NewVariety } from "@/db/schema/varieties";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import BackIcon from "@/components/icons/back";
+import { revalidatePath } from "next/cache";
 
 export default async function Page({ params }: { params: { product: string } }) {
     const productID = Number(params.product);
@@ -30,6 +31,7 @@ export default async function Page({ params }: { params: { product: string } }) 
         } catch (error) {
             console.log(error)
         }
+        revalidatePath(`/admin/${String(productID)}`)
         redirect(`/admin/${String(productID)}`)
     }
 

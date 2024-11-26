@@ -3,6 +3,8 @@ import db from "../../../../db";
 
 import ProductCard from "./productCard";
 
+export const fetchCache = 'force-no-store';
+
 const myFont = localFont({
     src: '../../../../public/fonts/choco.woff2',
     display: 'swap',

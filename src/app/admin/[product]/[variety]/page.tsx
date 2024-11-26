@@ -5,6 +5,9 @@ import BackIcon from "@/components/icons/back";
 import Link from "next/link";
 import { products } from "@/db/schema/products";
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
+
+export const fetchCache = 'force-no-store';
 
 export default async function Page({ params }: { params: { variety: string } }) {
     const varietyID = Number(params.variety);
@@ -37,6 +40,7 @@ export default async function Page({ params }: { params: { variety: string } }) 
         } catch (error) {
             
         }
+        revalidatePath(`/admin/${Number(variety?.productId)}`)
         redirect(`/admin/${Number(variety?.productId)}`)
     }
 
