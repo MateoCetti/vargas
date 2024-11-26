@@ -27,7 +27,7 @@ export default async function Page({ params }: { params: { product: string } }) 
         console.log(newVariety)
         try {
             const res = await db.insert(varieties).values(newVariety);
-        } catch (error) {1
+        } catch (error) {
             console.log(error)
         }
         redirect(`/admin/${String(productID)}`)
