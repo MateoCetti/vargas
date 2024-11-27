@@ -21,7 +21,8 @@ export default async function Page() {
         } catch (error) {
             
         }
-        revalidatePath(`/admin/`);
+        revalidatePath(`/admin`);
+        
     }
     return (
         <div className="bg-white mt-20 mb-10 h-full flex flex-col">
