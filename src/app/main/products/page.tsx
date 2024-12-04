@@ -4,6 +4,7 @@ import db from "../../../../db";
 import ProductCard from "./productCard";
 
 export const fetchCache = 'force-no-store';
+export const dynamic = 'force-dynamic'
 
 const myFont = localFont({
     src: '../../../../public/fonts/choco.woff2',

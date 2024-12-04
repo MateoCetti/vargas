@@ -6,6 +6,7 @@ import AddIcon from "@/components/icons/add";
 import { products as Products } from "@/db/schema/products";
 import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export const fetchCache = 'force-no-store';
 
@@ -22,6 +23,7 @@ export default async function Page() {
             
         }
         revalidatePath(`/admin`);
+        redirect("/admin")
         
     }
     return (
