@@ -44,7 +44,7 @@ export default function FindUsPage() {
                         className="fill-current text-green-600"></path>
                 </svg>
             </div>
-            <div className="lg:px-5 flex justify-center">
+            <div className="lg:px-5 flex justify-center py-12">
                 <iframe className="w-[1080px] h-[400px] lg:h-[720px]" src="https://www.youtube.com/embed/peV6VhmQV0o" ></iframe>
             </div>
         </section>
