@@ -29,7 +29,7 @@ export default function Footer() {
                 <p>+54 9 351-3154814</p>
             </div>
             <div className="my-10">
-                <h1 className={`text-xl ${myFont.className}`}>seguinos</h1>
+                <h1 className={`text-xl ${myFont.className}`}>Seguinos</h1>
                 <div className="flex flex-row gap-4 justify-center">
                     <a target="_blank" href="https://www.facebook.com/vargas.cba" >
                         <FacebookIcon viewBox="0 0 50 50" width={25} />
