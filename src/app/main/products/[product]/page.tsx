@@ -19,6 +19,9 @@ const myFont = localFont({
     variable: '--font-choco',
 })
 
+export const fetchCache = 'force-no-store';
+export const dynamic = 'force-dynamic'
+
 export default async function Page({ params }: { params: { product: string } }) {
     const productID = Number(params.product);
     const product = await db.select().from(products).where(eq(products.id, productID))
