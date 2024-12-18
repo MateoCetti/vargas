@@ -17,7 +17,7 @@ export default async function productsPage() {
 
 
     return (
-        <section className="mt-20 mb-10 lg:mx-2 bg-white grid grid-cols-1 gap-2 lg:grid-cols-6 justify-items-center items-center">
+        <section className="mt-20 mb-10 lg:mx-2 bg-white grid grid-cols-1 gap-2 lg:grid-cols-5 justify-items-center items-center">
             <div className={`bg-green-900 text-center col-span-1 lg:col-span-5 py-4 text-white text-xl w-full ${myFont.className}`}>Nuestros productos</div>
 
             {
