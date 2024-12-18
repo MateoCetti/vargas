@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react";
+import Image from "next/image";
 
 import { variety } from "@/db/schema/varieties";
 
@@ -44,7 +45,10 @@ export default function Variety({ variety }: { variety: variety }) {
     return (
         <>
             <div className="col-span-3 lg:col-span-4 grid grid-cols-3 lg:grid-cols-4 w-full text-center items-center">
+                <div className="flex items-center justify-center gap-5">
+                <Image src={item.item.picture} width={100} height={100} alt="" />
                 <p>{variety.name}</p>
+                </div>
                 <p>{variety.price}</p>
                 <div className="relative flex items-center justify-center">
                     {
