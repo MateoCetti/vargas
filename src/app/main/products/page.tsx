@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import db from "../../../../db";
+import { desc, asc } from "drizzle-orm";
 
 import ProductCard from "./productCard";
 
@@ -13,7 +14,9 @@ const myFont = localFont({
 })
 
 export default async function productsPage() {
-    const res = await db.query.products.findMany()
+    const res = await db.query.products.findMany({
+        orderBy: (products, {asc}) => [asc(products.name)]
+    })
 
 
     return (
