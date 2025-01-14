@@ -1,6 +1,5 @@
 import localFont from "next/font/local";
 import db from "../../../../db";
-import { desc, asc } from "drizzle-orm";
 
 import ProductCard from "./productCard";
 

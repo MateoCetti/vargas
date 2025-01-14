@@ -12,7 +12,7 @@ export default function FindUsPage() {
     return (
         <section className="bg-white mt-20 mb-5">
             <div className={`bg-green-900 text-center py-4 text-white text-xl w-full ${myFont.className}`}>¿Donde encontrarnos?</div>
-            <div className="flex grid grid-cols-1 lg:grid-cols-2 mb-10">
+            <div className="flex grid grid-cols-1 lg:grid-cols-2 mb-20">
                 <div className="text-justify lg:text-center p-5 self-center">
                     <p>Estamos ubicados en el mercado de abasto de la provincia de Córdoba
                         (Ruta 19, Km 7 1/2, Córdoba Argentina), mas esepcificamente hablando
