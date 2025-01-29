@@ -84,15 +84,15 @@ export default function AboutUsPage() {
                     </span>
                 </div>
                 <div className="relative">
-                    <Image alt="" src={"/adrian.jpeg"} width={250} height={100}></Image>
+                    <Image alt="" src={"/fede.jpeg"} width={250} height={100}></Image>
                     <span className="bg-white absolute w-[200px] h-16 m-auto -bottom-4 left-0 right-0 text-center shadow flex flex-col justify-center hover:text-white hover:bg-green-600">
-                        <p className="font-bold">Adrian Vargas</p>
+                        <p className="font-bold">Diego Federico Vargas</p>
                     </span>
                 </div>
                 <div className="relative">
-                    <Image alt="" src={"/adrian.jpeg"} width={250} height={100}></Image>
+                    <Image alt="" src={"/fede.jpeg"} width={250} height={100}></Image>
                     <span className="bg-white absolute w-[200px] h-16 m-auto -bottom-4 left-0 right-0 text-center shadow flex flex-col justify-center hover:text-white hover:bg-green-600">
-                        <p className="font-bold">Adrian Vargas</p>
+                        <p className="font-bold">Lucas Vargas</p>
                     </span>
                 </div>
             </div>
