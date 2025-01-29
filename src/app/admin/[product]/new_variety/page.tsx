@@ -6,6 +6,13 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import BackIcon from "@/components/icons/back";
 import { revalidatePath } from "next/cache";
+import localFont from "next/font/local";
+
+const myFont = localFont({
+    src: '../../../../../public/fonts/choco.woff2',
+    display: 'swap',
+    variable: '--font-choco',
+  })
 
 export default async function Page({ params }: { params: { product: string } }) {
     const productID = Number(params.product);
@@ -40,7 +47,7 @@ export default async function Page({ params }: { params: { product: string } }) 
 
             <div className="mt-20 flex justify-around items-center">
                 <Link href={`/admin/${productID}`}><BackIcon className="ml-2" /></Link>
-                <h1 className="text-4xl">Nueva variedad</h1>
+                <h1 className={`text-4xl ${myFont.className} flex-grow text-center`}>Nueva variedad</h1>
             </div>
             <form action={create} className="mt-5 bg-white pb-5 rounded-xl mx-5 px-4">
                 <div className="flex flex-col gap-4">

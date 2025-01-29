@@ -9,6 +9,13 @@ import DeleteIcon from "@/components/icons/delete";
 import AddIcon from "@/components/icons/add";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
+import localFont from "next/font/local";
+
+const myFont = localFont({
+    src: '../../../../public/fonts/choco.woff2',
+    display: 'swap',
+    variable: '--font-choco',
+  })
 
 export const fetchCache = 'force-no-store';
 
@@ -54,11 +61,11 @@ export default async function Page({ params }: { params: { product: string } }) 
         <>
             <div className="mt-20 flex justify-around items-center">
                 <Link href={`/admin/`}><BackIcon className="ml-2" /></Link>
-                <h1 className="grow text-4xl text-center">Producto</h1>
+                <h1 className={`grow text-4xl text-center ${myFont.className}`}>Producto</h1>
             </div>
             <form action={save} className="mt-5 bg-white pb-5 rounded-xl mx-5 px-4">
                 <div className="flex justify-center">
-                    <h1 className="text-2xl">Propiedades</h1>
+                    <h1 className={`text-2xl ${myFont.className}`}>Propiedades</h1>
                 </div>
                 <div className="flex flex-col gap-4">
                     <div className="flex flex-col justify-center">
@@ -76,7 +83,7 @@ export default async function Page({ params }: { params: { product: string } }) 
             </form>
             <div className="mt-5 bg-white pb-5 rounded-xl mx-5 px-4">
                 <div className="flex justify-center mb-4">
-                    <h1 className="text-2xl">Variedades</h1>
+                    <h1 className={`text-2xl ${myFont.className}`}>Variedades</h1>
                 </div>
                 <div className="flex flex-col gap-2 divide-y">
                     {varieties.map((variety, i) =>

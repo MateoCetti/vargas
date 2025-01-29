@@ -5,6 +5,13 @@ import Link from "next/link";
 import BackIcon from "@/components/icons/back";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
+import localFont from "next/font/local";
+
+const myFont = localFont({
+    src: '../../../../public/fonts/choco.woff2',
+    display: 'swap',
+    variable: '--font-choco',
+  })
 
 export default async function Page() {
 
@@ -18,11 +25,11 @@ export default async function Page() {
         <form action={create}>
             <div className="mt-20 flex justify-around items-center">
                 <Link href={`/admin/`}><BackIcon className="ml-2" /></Link>
-                <h1 className="grow text-4xl text-center">Nuevo producto</h1>
+                <h1 className={`grow text-4xl text-center ${myFont.className}`}>Nuevo producto</h1>
             </div>
             <div className="mt-5 bg-white pb-5 rounded-xl mx-5 px-4">
                 <div className="flex justify-center">
-                    <h1 className="text-2xl">Propiedades</h1>
+                    <h1 className={`text-2xl ${myFont.className}`}>Propiedades</h1>
                 </div>
                 <div className="flex flex-col gap-4">
                     <div className="flex flex-col justify-center">

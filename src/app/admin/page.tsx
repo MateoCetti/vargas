@@ -7,6 +7,13 @@ import { products as Products } from "@/db/schema/products";
 import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import localFont from "next/font/local";
+
+const myFont = localFont({
+    src: '../../../public/fonts/choco.woff2',
+    display: 'swap',
+    variable: '--font-choco',
+  })
 
 export const fetchCache = 'force-no-store';
 
@@ -28,10 +35,10 @@ export default async function Page() {
     return (
         <div className="bg-white mt-20 mb-10 h-full flex flex-col">
             <div className="flex justify-center">
-                <h1 className="text-4xl">Productos</h1>
+                <h1 className={`text-4xl ${myFont.className}`}>Productos</h1>
             </div>
             <div className="grid grid-cols-3 place-items-center my-5 divide-y-2">
-                <div className="col-span-full place-self-stretch grid grid-cols-3 place-items-center bg-blue-500 text-white font-bold p-2">
+                <div className={`col-span-full place-self-stretch grid grid-cols-3 place-items-center bg-blue-500 text-white p-2 ${myFont.className}`}>
                     <p>Nombre</p>
                     <p>Editar</p>
                     <p>Borrar</p>
