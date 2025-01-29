@@ -45,7 +45,7 @@ export default function Page() {
         cart.forEach(item => text +=` - ${item.item.quantity} ${item.item.name}\n`);
         text += `\nDatos personales:\n - Nombre y apellido: ${userData.name}\n - Telefono: ${userData.phone}\n`
 
-        const url = `https://api.whatsapp.com/send/?phone=+5493516455611&text=${encodeURIComponent(text)}`
+        const url = `https://api.whatsapp.com/send/?phone=+5493513252930&text=${encodeURIComponent(text)}`
         router.push(url)
     }
 
@@ -108,8 +108,6 @@ export default function Page() {
                 </div>
                 <button type="submit" className="col-span-2 lg:col-span-4 w-52 text-center border rounded-full px-2 bg-green-700 text-white">Confirmar compra</button>
             </form>
-
-            {/* <a href={`https://wa.me/+5493516455611?text=sape`} >Continuar</a> */}
         </section>
     );
 }
