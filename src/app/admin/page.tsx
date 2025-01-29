@@ -12,7 +12,6 @@ export const fetchCache = 'force-no-store';
 
 export default async function Page() {
     const products = await db.query.products.findMany();
-    const rowClassName = "flex w-full h-10 items-center justify-around";
 
     async function remove(formData: FormData){
         "use server"
@@ -31,21 +30,21 @@ export default async function Page() {
             <div className="flex justify-center">
                 <h1 className="text-4xl">Productos</h1>
             </div>
-            <div className={rowClassName}>
-                <p>Nombre</p>
+            <div className="grid grid-cols-3 place-items-center">
+                <p className="place-self-start mx-10">Nombre</p>
                 <p>Editar</p>
                 <p>Borrar</p>
-            </div>
             {
                 products.map((product, i) =>
-                    <div key={i} className={rowClassName}>
-                        <Link href={`/admin/${product.id}`}>
+                    <>
+                        <Link href={`/admin/${product.id}`} className="place-self-start mx-10">
                             {product.name}
                         </Link>
                         <Link href={`/admin/${product.id}`}><EditIcon /></Link>
                         <form action={remove}><button name="productID" value={product.id}><DeleteIcon /></button></form>
-                    </div>)
+                    </>)
             }
+            </div>
 
             <Link href={`/admin/new_product`} className="fixed bottom-5 right-5 bg-green-500 rounded-full p-2"><AddIcon /></Link>
 
