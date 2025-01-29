@@ -89,7 +89,7 @@ export default function BuyPage() {
                         <p>{product.item.quantity * product.item.price}</p>
                         <button onClick={()=> dispatch(removeItem(product))}><DeleteIcon /></button>
                     </div>)}
-                    <div className="col-span-5 justify-center py-1" ><Link href={"/main/products"}>--- ¡Agregar mas productos 🍋! ---</Link></div>
+                    <div className="col-span-5 justify-center py-1 hover:bg-green-700 hover:font-bold hover:text-white" ><Link href={"/main/products"}>--- ¡Agregar mas productos 🍋! ---</Link></div>
                     <div className="col-span-5 justify-center py-1 " > <p><b>Total:</b> {price.toString()}</p></div>
             </div>
             <div className="w-full flex justify-center">
