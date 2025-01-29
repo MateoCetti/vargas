@@ -13,37 +13,39 @@ export const fetchCache = 'force-no-store';
 export default async function Page() {
     const products = await db.query.products.findMany();
 
-    async function remove(formData: FormData){
+    async function remove(formData: FormData) {
         "use server"
         const id = Number(formData.get("productID"));
         try {
             await db.delete(Products).where(eq(Products.id, id))
         } catch (error) {
-            
+
         }
         revalidatePath(`/admin`);
         redirect("/admin")
-        
+
     }
     return (
         <div className="bg-white mt-20 mb-10 h-full flex flex-col">
             <div className="flex justify-center">
                 <h1 className="text-4xl">Productos</h1>
             </div>
-            <div className="grid grid-cols-3 place-items-center">
-                <p className="place-self-start mx-10">Nombre</p>
-                <p>Editar</p>
-                <p>Borrar</p>
-            {
-                products.map((product, i) =>
-                    <>
-                        <Link href={`/admin/${product.id}`} className="place-self-start mx-10">
-                            {product.name}
-                        </Link>
-                        <Link href={`/admin/${product.id}`}><EditIcon /></Link>
-                        <form action={remove}><button name="productID" value={product.id}><DeleteIcon /></button></form>
-                    </>)
-            }
+            <div className="grid grid-cols-3 place-items-center my-5 divide-y-2">
+                <div className="col-span-full place-self-stretch grid grid-cols-3 place-items-center bg-blue-500 text-white font-bold p-2">
+                    <p>Nombre</p>
+                    <p>Editar</p>
+                    <p>Borrar</p>
+                </div>
+                {
+                    products.map((product, i) =>
+                        <div className="col-span-full place-self-stretch grid grid-cols-3 place-items-center py-2 pt-4 hover:bg-blue-500 hover:text-white hover:font-bold hover:text-xl">
+                            <Link href={`/admin/${product.id}`} className="place-self-start ms-10">
+                                {product.name}
+                            </Link>
+                            <Link href={`/admin/${product.id}`}><EditIcon /></Link>
+                            <form action={remove}><button name="productID" value={product.id}><DeleteIcon /></button></form>
+                        </div>)
+                }
             </div>
 
             <Link href={`/admin/new_product`} className="fixed bottom-5 right-5 bg-green-500 rounded-full p-2"><AddIcon /></Link>
