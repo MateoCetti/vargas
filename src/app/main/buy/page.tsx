@@ -22,7 +22,7 @@ const myFont = localFont({
 export default function BuyPage() {
     const cart = useAppSelector((s) => s.persistedReducer.productsState.cart);
     const [price, setPrice] = useState<Number>(updatePrice());
-
+    console.log(JSON.stringify(cart))
     useEffect(()=>{
         setPrice(updatePrice())
     }, [cart])
@@ -43,6 +43,7 @@ export default function BuyPage() {
         const newItem: Item = {
             id: item.id,
             item: {
+                productName: item.item.productName,
                 name: item.item.name,
                 picture: item.item.picture,
                 quantity: newValue,
@@ -68,7 +69,7 @@ export default function BuyPage() {
                 </div>
                 {cart.map((product, i) =>
                     <div key={i} className="col-span-5 grid grid-cols-5 py-1 justify-center items-center text-center justify-items-center">
-                        <p>{product.item.name}</p>
+                        <p>{product.item.productName} {product.item.name}</p>
                         <Image src={product.item.picture} alt="image" width={50} height={"50"}></Image>
                         <div className="flex ">
                             <button className="bg-green-700 hover:bg-green-400 border border-gray-300 rounded-s-full p-1 lg:p-3  focus:ring-gray-100 focus:ring-2 focus:outline-none"

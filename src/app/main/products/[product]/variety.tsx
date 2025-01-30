@@ -8,7 +8,7 @@ import { variety } from "@/db/schema/varieties";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { updateItem, isInCart, Item } from "@/lib/features/storeSlice";
 
-export default function Variety({ variety }: { variety: variety }) {
+export default function Variety({ variety, productName }: { variety: variety, productName: string }) {
     const store = useAppSelector((s) => s.persistedReducer.productsState.cart);
     const dispatch = useAppDispatch()
     const isItem = isInCart(store, variety.id)
@@ -16,6 +16,7 @@ export default function Variety({ variety }: { variety: variety }) {
         {
             id: variety.id,
             item: {
+                productName: productName,
                 name: variety.name,
                 picture: variety.img_src,
                 quantity: 0,
@@ -28,6 +29,7 @@ export default function Variety({ variety }: { variety: variety }) {
         const newItem: Item = {
             id: item.id,
             item: {
+                productName: productName,
                 name: item.item.name,
                 picture: item.item.picture,
                 quantity: value,

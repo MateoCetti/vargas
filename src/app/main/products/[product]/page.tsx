@@ -47,7 +47,7 @@ export default async function Page({ params }: { params: { product: string } }) 
 
                     {
                         varieties.map((v, i) =>
-                            <Variety variety={v} key={i}></Variety>
+                            <Variety productName={product[0].name} variety={v} key={i}></Variety>
                         )
                     }
                 </div>

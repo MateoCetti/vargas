@@ -4,7 +4,8 @@ type Variety = {
   name: string,
   quantity: number,
   picture: string,
-  price: number
+  price: number,
+  productName: string
 }
 
 export type Item = {
