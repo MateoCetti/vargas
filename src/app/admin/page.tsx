@@ -45,7 +45,7 @@ export default async function Page() {
                 </div>
                 {
                     products.map((product, i) =>
-                        <div className="col-span-full place-self-stretch grid grid-cols-3 place-items-center py-2 pt-4 hover:bg-blue-500 hover:text-white hover:font-bold hover:text-xl">
+                        <div key={i} className="col-span-full place-self-stretch grid grid-cols-3 place-items-center py-2 pt-4 hover:bg-blue-500 hover:text-white hover:font-bold hover:text-xl">
                             <Link href={`/admin/${product.id}`} className="place-self-start ms-10">
                                 {product.name}
                             </Link>
