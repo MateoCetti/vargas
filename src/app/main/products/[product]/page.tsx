@@ -39,15 +39,14 @@ export default async function Page({ params }: { params: { product: string } }) 
                     <div></div>
                 </div>
 
-                <div className="grid grid-cols-3 lg:grid-cols-4 w-full text-center text-xs lg:text-xl">
+                <div className="grid grid-cols-3 w-full text-center text-xs lg:text-xl">
                     <div className="bg-green-700 py-4 text-white uppercase">Producto</div>
                     <div className="bg-green-700 py-4 text-white uppercase">Precio</div>
-                    <div className="bg-green-700 py-4 text-white uppercase">Cantidad</div>
-                    <div className="bg-green-700 py-4 text-white hidden uppercase lg:inline">Total</div>
+                    <div className="bg-green-700 py-4 text-white uppercase">Disponibilidad</div>
 
                     {
                         varieties.map((v, i) =>
-                            <Variety productName={product[0].name} variety={v} key={i}></Variety>
+                            <Variety variety={v} key={i} />
                         )
                     }
                 </div>

@@ -1,6 +1,5 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
-import StoreProvider from "@/lib/StoreProvider";
 
 export default function Layout({
     children,
@@ -9,10 +8,8 @@ export default function Layout({
   }>) {
     return (
         <>
-        <StoreProvider>
             <Navbar type="user" />
                 {children}
             <Footer />
-        </StoreProvider>
         </>)
 }

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import Drawer from "./drawer";
-import ShoppingCart from "./shoppingCart";
 
 const menuItems: Array<{ name: string, href: string }> = [
     { name: "Inicio", href: "/" },
@@ -51,7 +50,7 @@ export default function Navbar({ type }: { type: "admin" | "user" }) {
                             </li>)
                 }
             </ul>
-            {type === "user" && <ShoppingCart />}
+            <div />
         </nav>
     );
 }
