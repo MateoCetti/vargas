@@ -2,7 +2,7 @@
 const nextConfig = {
     images:{
         remotePatterns:[{
-            hostname: 'drive.google.com',
+            hostname: 'placehold.co',
         }]
     }
 };

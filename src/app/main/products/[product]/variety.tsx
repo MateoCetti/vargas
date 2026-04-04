@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { variety } from "@/db/schema/varieties";
+import { Variety as VarietyType } from "@/data/products";
 
-export default function Variety({ variety }: { variety: variety }) {
+export default function Variety({ variety }: { variety: VarietyType }) {
     return (
         <div className="col-span-3 grid grid-cols-3 w-full text-center items-center">
             <div className="flex items-center justify-center gap-5">
