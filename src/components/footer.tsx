@@ -1,6 +1,7 @@
 import Image from "next/image"
 import InstagramIcon from "./icons/instagram"
 import FacebookIcon from "./icons/facebook"
+import LocationIcon from "./icons/location"
 import { chocoFont } from "@/lib/fonts"
 
 export default function Footer() {
@@ -11,9 +12,14 @@ export default function Footer() {
             </div>
             <div className="my-10">
                 <h2 className={`text-xl ${chocoFont.className}`}>Ubicación</h2>
-                <p className="text-sm">Mercado de Abasto</p>
-                <p className="text-sm">Ruta 19, Km 7 1/2, Córdoba Argentina.</p>
-                <p className="text-sm">Nave 3, Puesto 322.</p>
+                <a
+                    href="https://maps.app.goo.gl/ZNHZ2aoDLKRewaLWA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex justify-center mt-2 hover:text-orange-200"
+                >
+                    <LocationIcon width={32} height={32} />
+                </a>
             </div>
             <div className="my-10">
                 <h2 className={`text-xl ${chocoFont.className}`}>Contactanos</h2>
