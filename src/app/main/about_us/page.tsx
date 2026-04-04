@@ -1,105 +1,75 @@
-import EyeIcon from "@/components/icons/eye";
-import MountainIcon from "@/components/icons/mountain";
-import StarIcon from "@/components/icons/star";
-import localFont from "next/font/local";
-import Image from "next/image";
-
-const myFont = localFont({
-    src: '../../../../public/fonts/choco.woff2',
-    display: 'swap',
-    variable: '--font-choco',
-})
-
+import EyeIcon from "@/components/icons/eye"
+import MountainIcon from "@/components/icons/mountain"
+import StarIcon from "@/components/icons/star"
+import WaveDivider from "@/components/wave-divider"
+import { chocoFont } from "@/lib/fonts"
+import Image from "next/image"
 
 export default function AboutUsPage() {
     return (
         <section className="mt-20 mb-6 bg-white shadow pb-5">
-            <div className={`bg-green-900 text-center py-4 text-white text-xl ${myFont.className}`}>Una empresa - Un legado de familia.</div>
-            <h1 className={`text-center text-4xl font-bold my-10 ${myFont.className}`}>Nuestra historia</h1>
+            <div className={`bg-green-900 text-center py-4 text-white text-xl ${chocoFont.className}`}>
+                Una empresa - Un legado de familia.
+            </div>
+            <h1 className={`text-center text-4xl font-bold my-10 ${chocoFont.className}`}>Nuestra historia</h1>
             <p className="mb-24">{text}</p>
 
-            <div className="bg-green-600 relative">
-                <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" className="absolute -top-5 lg:-top-20">
-                    <path
-                        d="M0 43.9999C106.667 43.9999 213.333 7.99994 320 7.99994C426.667 7.99994 533.333 43.9999 640 43.9999C746.667 43.9999 853.333 7.99994 960 7.99994C1066.67 7.99994 1173.33 43.9999 1280 43.9999C1386.67 43.9999 1440 19.0266 1440 9.01329V100H0V43.9999Z"
-                        className="fill-current text-green-600"></path>
-                </svg>
-            </div>
-            <div className="relative rotate-180 -translate-y-1">
-                <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M0 43.9999C106.667 43.9999 213.333 7.99994 320 7.99994C426.667 7.99994 533.333 43.9999 640 43.9999C746.667 43.9999 853.333 7.99994 960 7.99994C1066.67 7.99994 1173.33 43.9999 1280 43.9999C1386.67 43.9999 1440 19.0266 1440 9.01329V100H0V43.9999Z"
-                        className="fill-current text-green-600"></path>
-                </svg>
-            </div>
+            <WaveDivider fillClass="text-green-600" bgClass="bg-green-600" />
+            <WaveDivider fillClass="text-green-600" flipped />
 
             <div>
-                <h1 className={`text-4xl text-center font-bold my-10 ${myFont.className}`}>Nuestra empresa</h1>
+                <h2 className={`text-4xl text-center font-bold my-10 ${chocoFont.className}`}>Nuestra empresa</h2>
                 <div className="flex flex-col text-center lg:flex-row justify-center items-top gap-32 lg:gap-32 mb-20 self-start">
                     <div className="max-w-[400px] flex flex-col justify-center items-center">
-                        <div className="border border-2 border-[#16a34a] rounded-full p-5 my-5">
+                        <div className="border-2 border-[#16a34a] rounded-full p-5 my-5">
                             <MountainIcon fill="#16a34a" width={50} height={50} />
                         </div>
-                        <h1 className="text-xl font-bold m-5">Misión</h1>
+                        <h3 className="text-xl font-bold m-5">Misión</h3>
                         <p>Nuestra misión es proporcionar productos y servicios de alta calidad, basados en décadas de experiencia y conocimiento en la industria. Nos comprometemos a construir relaciones de confianza con nuestros clientes y socios, impulsando la innovación y la excelencia. Además, buscamos contribuir al bienestar de nuestra comunidad y al cuidado del medio ambiente a través de prácticas sostenibles y responsables.</p>
                     </div>
                     <div className="max-w-[400px] flex flex-col justify-center items-center self-start">
-                        <div className="border border-2 border-[#16a34a] rounded-full p-5 my-5">
+                        <div className="border-2 border-[#16a34a] rounded-full p-5 my-5">
                             <EyeIcon fill="#16a34a" width={50} height={50} />
                         </div>
-                        <h1 className="text-xl font-bold m-5">Visión</h1>
+                        <h3 className="text-xl font-bold m-5">Visión</h3>
                         <p>Ser reconocidos como líderes en nuestra industria, aprovechando más de 60 años de experiencia para innovar y ofrecer soluciones de calidad que superen las expectativas de nuestros clientes. Nos comprometemos a mantener nuestra tradición de excelencia, adaptándonos a los cambios del mercado y promoviendo un futuro sostenible que beneficie a nuestra comunidad y al medio ambiente.</p>
                     </div>
                     <div className="max-w-[400px] flex flex-col justify-center items-center self-start">
-                        <div className="border border-2 border-[#16a34a] rounded-full p-5 my-5">
+                        <div className="border-2 border-[#16a34a] rounded-full p-5 my-5">
                             <StarIcon fill="#16a34a" width={50} height={50} />
                         </div>
-                        <h1 className="text-xl font-bold m-5">Valores</h1>
+                        <h3 className="text-xl font-bold m-5">Valores</h3>
                         <p>Compromiso con la calidad, Innovacion, Responsabilidad social, Orientacion al cliente, Respeto, Adaptabilidad, Sostenibilidad.</p>
                     </div>
                 </div>
             </div>
 
-            <div className="bg-green-600 relative">
-                <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" className="absolute -top-5 lg:-top-20">
-                    <path
-                        d="M0 43.9999C106.667 43.9999 213.333 7.99994 320 7.99994C426.667 7.99994 533.333 43.9999 640 43.9999C746.667 43.9999 853.333 7.99994 960 7.99994C1066.67 7.99994 1173.33 43.9999 1280 43.9999C1386.67 43.9999 1440 19.0266 1440 9.01329V100H0V43.9999Z"
-                        className="fill-current text-green-600"></path>
-                </svg>
-            </div>
-            <div className="relative rotate-180 -translate-y-1">
-                <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M0 43.9999C106.667 43.9999 213.333 7.99994 320 7.99994C426.667 7.99994 533.333 43.9999 640 43.9999C746.667 43.9999 853.333 7.99994 960 7.99994C1066.67 7.99994 1173.33 43.9999 1280 43.9999C1386.67 43.9999 1440 19.0266 1440 9.01329V100H0V43.9999Z"
-                        className="fill-current text-green-600"></path>
-                </svg>
-            </div>
+            <WaveDivider fillClass="text-green-600" bgClass="bg-green-600" />
+            <WaveDivider fillClass="text-green-600" flipped />
 
-            <h1 className={`text-4xl font-bold mt-10 text-center my-5 ${myFont.className}`}>Los directivos</h1>
+            <h2 className={`text-4xl font-bold mt-10 text-center my-5 ${chocoFont.className}`}>Los directivos</h2>
             <div className="flex flex-col lg:flex-row gap-10 justify-center items-center mb-10">
                 <div className="relative">
-                    <Image alt="" src={"/adrian.jpeg"} width={250} height={100}></Image>
+                    <Image alt="Adrian Vargas" src="/adrian.jpeg" width={250} height={100} />
                     <span className="bg-white absolute w-[200px] h-16 m-auto -bottom-4 left-0 right-0 text-center shadow flex flex-col justify-center hover:text-white hover:bg-green-600">
                         <p className="font-bold">Adrian Vargas</p>
                     </span>
                 </div>
                 <div className="relative">
-                    <Image alt="" src={"/fede.jpeg"} width={250} height={100}></Image>
+                    <Image alt="Diego Federico Vargas" src="/fede.jpeg" width={250} height={100} />
                     <span className="bg-white absolute w-[200px] h-16 m-auto -bottom-4 left-0 right-0 text-center shadow flex flex-col justify-center hover:text-white hover:bg-green-600">
                         <p className="font-bold">Diego Federico Vargas</p>
                     </span>
                 </div>
                 <div className="relative">
-                    <Image alt="" src={"/fede.jpeg"} width={250} height={100}></Image>
+                    <Image alt="Lucas Vargas" src="/fede.jpeg" width={250} height={100} />
                     <span className="bg-white absolute w-[200px] h-16 m-auto -bottom-4 left-0 right-0 text-center shadow flex flex-col justify-center hover:text-white hover:bg-green-600">
                         <p className="font-bold">Lucas Vargas</p>
                     </span>
                 </div>
             </div>
-
-
         </section>
-    );
+    )
 }
 
 const text = <>
