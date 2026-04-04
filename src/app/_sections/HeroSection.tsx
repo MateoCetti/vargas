@@ -1,7 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
 import photo from "@/assets/photo.jpg"
-import { chocoFont } from "@/lib/fonts"
 
 export default function HeroSection() {
   return (
@@ -11,9 +10,7 @@ export default function HeroSection() {
     >
       <Image src="/logo_3.png" width={100} height={100} alt="Vargas logo" />
       <div>
-        <h1 className={`text-white text-6xl text-center ${chocoFont.className}`}>
-          Vargas Productos Frescos
-        </h1>
+        <Image src="/logo_3.png" width={500} height={200} alt="Vargas Productos Frescos" className="-translate-x-10" />
         <div className="flex justify-center gap-4 mt-10">
           <Link
             href="/main/products"
