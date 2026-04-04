@@ -15,7 +15,7 @@ export default function AboutSection() {
         />
       </div>
       <div className="flex flex-col items-center h-full mx-5">
-        <h2 className={`text-5xl mt-[200px] font-bold ${chocoFont.className}`}>
+        <h2 className={`text-5xl mt-[200px] font-bold text-center lg:text-left ${chocoFont.className}`}>
           Una empresa, un legado de familia.
         </h2>
         <p className="mt-5">

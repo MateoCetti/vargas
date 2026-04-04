@@ -10,7 +10,7 @@ export default function HeroSection() {
     >
       <Image src="/logo_3.png" width={100} height={100} alt="Vargas logo" />
       <div>
-        <Image src="/logo_3.png" width={500} height={200} alt="Vargas Productos Frescos" className="-translate-x-10" />
+        <Image src="/logo_3.png" width={500} height={200} alt="Vargas Productos Frescos" className="lg:-translate-x-10" />
         <div className="flex justify-center gap-4 mt-10">
           <Link
             href="/main/products"

@@ -13,7 +13,7 @@ export default function ProductsSection() {
         />
       </div>
       <div className="flex flex-col px-4 items-center justify-center">
-        <h2 className={`text-4xl font-bold ${chocoFont.className}`}>
+        <h2 className={`text-4xl font-bold text-center lg:text-left ${chocoFont.className}`}>
           Productos frescos y seleccionados
         </h2>
         <p className="mt-5">
