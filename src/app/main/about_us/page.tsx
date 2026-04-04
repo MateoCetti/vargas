@@ -12,7 +12,7 @@ export default function AboutUsPage() {
                 Una empresa - Un legado de familia.
             </div>
             <h1 className={`text-center text-4xl font-bold my-10 ${chocoFont.className}`}>Nuestra historia</h1>
-            <p className="mb-24">{text}</p>
+            <p className="mb-24 lg:max-w-2xl lg:mx-auto lg:text-lg">{text}</p>
 
             <WaveDivider fillClass="text-green-600" bgClass="bg-green-600" />
             <WaveDivider fillClass="text-green-600" flipped />
