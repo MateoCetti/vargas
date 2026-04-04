@@ -5,7 +5,7 @@ import { chocoFont } from "@/lib/fonts"
 
 export default function Footer() {
     return (
-        <footer className="grid grid-cols-1 lg:grid-cols-4 gap-4 bg-white pt-12 text-center">
+        <footer className="grid grid-cols-1 lg:grid-cols-4 gap-4 bg-orange-500 pt-12 text-center text-white">
             <div className="flex justify-center items-center">
                 <Image src="/logo_1.png" width={200} height={200} alt="Vargas" />
             </div>
@@ -33,7 +33,7 @@ export default function Footer() {
                     </a>
                 </div>
             </div>
-            <div className="col-span-full bg-green-900 text-center text-white text-sm py-4 mt-10">
+            <div className="col-span-full bg-orange-600 text-center text-white text-sm py-4 mt-10">
                 © {new Date().getFullYear()} <b>Vargas</b> - Todos los Derechos Reservados. -
             </div>
         </footer>

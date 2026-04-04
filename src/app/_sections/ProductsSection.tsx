@@ -23,7 +23,7 @@ export default function ProductsSection() {
         </p>
         <Link
           href="/main/products"
-          className="p-3 border border-3 border-green-500 self-start lg:self-center rounded-xl font-bold mt-5 hover:bg-green-600 hover:text-white"
+          className="p-3 border border-3 border-orange-500 self-start lg:self-center rounded-xl font-bold mt-5 hover:bg-white hover:text-orange-500"
         >
           Ver nuestros productos
         </Link>

@@ -14,13 +14,13 @@ export default function HeroSection() {
         <div className="flex justify-center gap-4 mt-10">
           <Link
             href="/main/products"
-            className="p-2 bg-green-600 text-white rounded hover:bg-white hover:text-black"
+            className="p-2 bg-orange-500 text-white rounded hover:bg-white hover:text-orange-500"
           >
             Productos
           </Link>
           <Link
             href="#about-us"
-            className="p-2 border-2 text-white rounded hover:bg-white hover:text-black"
+            className="p-2 border-2 text-white rounded hover:bg-orange-500"
           >
             Sobre nosotros
           </Link>

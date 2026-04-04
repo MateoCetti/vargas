@@ -26,7 +26,7 @@ export default function AboutSection() {
         </p>
         <Link
           href="/main/about_us"
-          className="p-3 text-xl self-start lg:self-center border-2 border-black rounded mt-6 hover:bg-black hover:text-white"
+          className="p-3 text-xl self-start lg:self-center border-2 border-black rounded mt-6 hover:bg-orange-500 hover:text-white hover:border-orange-500"
         >
           Ver mas
         </Link>
