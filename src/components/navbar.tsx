@@ -5,8 +5,7 @@ import Drawer from "./drawer";
 const menuItems: Array<{ name: string, href: string }> = [
     { name: "Inicio", href: "/" },
     { name: "Productos", href: "/main/products" },
-    { name: "Sobre nosotros", href: "/main/about_us" },
-    { name: "Donde ubicarnos", href: "/main/find_us" }
+    { name: "Sobre nosotros", href: "/main/about_us" }
 ]
 
 const adminItems: Array<{ name: string, href: string }> = [

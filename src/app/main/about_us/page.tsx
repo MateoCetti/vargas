@@ -1,5 +1,6 @@
 import Image from "next/image"
 import EyeIcon from "@/components/icons/eye"
+import LocationIcon from "@/components/icons/location"
 import MountainIcon from "@/components/icons/mountain"
 import StarIcon from "@/components/icons/star"
 import { chocoFont } from "@/lib/fonts"
@@ -114,6 +115,50 @@ export default function AboutUsPage() {
                                 <p className="bg-white p-4 text-center font-bold text-neutral-900">{name}</p>
                             </article>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            <section id="ubicacion" className="bg-stone-50 px-6 py-16 lg:px-12">
+                <div className="mx-auto max-w-6xl">
+                    <span className="text-sm font-semibold uppercase tracking-wide text-green-600">Ubicación</span>
+                    <h2 className={`mt-3 text-4xl text-neutral-900 lg:text-5xl ${chocoFont.className}`}>
+                        ¿Dónde encontrarnos?
+                    </h2>
+                    <div className="mt-10 grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
+                        <div>
+                            <p className="leading-relaxed text-neutral-600">
+                                Estamos ubicados en el mercado de abasto de la provincia de Córdoba (Ruta 19, Km 7
+                                1/2, Córdoba Argentina), más específicamente en la nave 3, puesto 322.
+                            </p>
+                            <a
+                                href="https://maps.app.goo.gl/ZNHZ2aoDLKRewaLWA"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="mt-6 inline-flex items-center gap-2 rounded-full bg-neutral-900 px-6 py-3 font-semibold text-white hover:bg-neutral-800"
+                            >
+                                <LocationIcon width={18} height={18} />
+                                Ver en Google Maps
+                            </a>
+                        </div>
+                        <div className="overflow-hidden rounded-2xl border border-stone-200">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27246.59763267547!2d-64.13171686523438!3d-31.39139669999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943297d6ff1e437d%3A0xc93a4dc6b8bb8848!2sMercado%20de%20Abasto!5e0!3m2!1ses-419!2sar!4v1721495073045!5m2!1ses-419!2sar"
+                                className="aspect-square w-full lg:aspect-auto lg:h-96"
+                                allowFullScreen
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                            />
+                        </div>
+                    </div>
+
+                    <h3 className={`mt-16 text-2xl text-neutral-900 ${chocoFont.className}`}>Conocé nuestro local</h3>
+                    <div className="mt-6 aspect-video w-full max-w-4xl overflow-hidden rounded-2xl border border-stone-200">
+                        <iframe
+                            className="h-full w-full"
+                            src="https://www.youtube.com/embed/peV6VhmQV0o"
+                            allowFullScreen
+                        />
                     </div>
                 </div>
             </section>
