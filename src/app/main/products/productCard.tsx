@@ -1,12 +1,10 @@
 "use client"
 import Image from "next/image"
-import { useRouter } from 'next/navigation'
 
 import { Product } from "@/data/products"
 import { chocoFont } from "@/lib/fonts"
 
 export default function ProductCard({ product }: { product: Product }) {
-    const router = useRouter();
 
     return (
         <article
