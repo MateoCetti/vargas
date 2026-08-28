@@ -13,6 +13,10 @@ export type Product = {
   id: number;
   name: string;
   image: string;
+  imageFit: "cover" | "contain";
+  category: "Frutas" | "Verduras";
+  shortDescription: string;
+  seasonLabel: string;
   varieties: Variety[];
 };
 
@@ -20,7 +24,11 @@ export const PRODUCTS: Product[] = [
   {
     id: 1,
     name: "Manzana",
-    image: "https://placehold.co/200x200/4a7c59/white.png?text=Manzana",
+    image: "/manzana.png",
+    imageFit: "contain",
+    category: "Frutas",
+    shortDescription: "Firmes y crujientes, del Alto Valle.",
+    seasonLabel: "Todo el año",
     varieties: [
       {
         id: 1,
@@ -57,7 +65,11 @@ export const PRODUCTS: Product[] = [
   {
     id: 2,
     name: "Tomate",
-    image: "https://placehold.co/200x200/c0392b/white.png?text=Tomate",
+    image: "/tomate.jpg",
+    imageFit: "cover",
+    category: "Verduras",
+    shortDescription: "De planta, con color y aroma reales.",
+    seasonLabel: "Primavera y verano",
     varieties: [
       {
         id: 4,
@@ -94,7 +106,11 @@ export const PRODUCTS: Product[] = [
   {
     id: 3,
     name: "Naranja",
-    image: "https://placehold.co/200x200/e67e22/white.png?text=Naranja",
+    image: "/naranja.png",
+    imageFit: "contain",
+    category: "Frutas",
+    shortDescription: "Jugosas, ideales para jugo y mesa.",
+    seasonLabel: "Otoño e invierno",
     varieties: [
       {
         id: 7,
@@ -121,7 +137,11 @@ export const PRODUCTS: Product[] = [
   {
     id: 4,
     name: "Lechuga",
-    image: "https://placehold.co/200x200/2ecc71/white.png?text=Lechuga",
+    image: "/lechuga.jpg",
+    imageFit: "cover",
+    category: "Verduras",
+    shortDescription: "Hoja fresca, cortada el mismo día.",
+    seasonLabel: "Todo el año",
     varieties: [
       {
         id: 9,
@@ -158,7 +178,11 @@ export const PRODUCTS: Product[] = [
   {
     id: 5,
     name: "Banana",
-    image: "https://placehold.co/200x200/f1c40f/white.png?text=Banana",
+    image: "/banana.jpg",
+    imageFit: "cover",
+    category: "Frutas",
+    shortDescription: "Maduración cuidada, punto dulce justo.",
+    seasonLabel: "Todo el año",
     varieties: [
       {
         id: 12,
@@ -185,7 +209,11 @@ export const PRODUCTS: Product[] = [
   {
     id: 6,
     name: "Pera",
-    image: "https://placehold.co/200x200/a8d8a8/white.png?text=Pera",
+    image: "/pera.png",
+    imageFit: "contain",
+    category: "Frutas",
+    shortDescription: "Selección por calibre y madurez.",
+    seasonLabel: "Verano y otoño",
     varieties: [
       {
         id: 14,
