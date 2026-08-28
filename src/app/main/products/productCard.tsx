@@ -10,7 +10,6 @@ export default function ProductCard({ product }: { product: Product }) {
 
     return (
         <article
-            onClick={() => { router.push(`/main/products/${product.id}`) }}
             className="group cursor-pointer overflow-hidden rounded-2xl border border-stone-200 bg-white transition hover:shadow-md"
         >
             <div className="relative aspect-square bg-gradient-to-b from-amber-100 to-orange-50">
