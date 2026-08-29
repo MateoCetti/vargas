@@ -1,12 +1,13 @@
 import Image from "next/image"
 import Link from "next/link"
 import { chocoFont } from "@/lib/fonts"
+import Reveal from "@/components/reveal"
 
 export default function AboutSection() {
   return (
     <section id="about-us" className="bg-green-600 px-6 py-20 lg:px-12">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-2">
-        <div className="text-center lg:text-left">
+        <Reveal delay={0} className="text-center lg:text-left">
           <span className="text-sm font-semibold uppercase tracking-wide text-green-100">
             Nuestra historia
           </span>
@@ -24,14 +25,14 @@ export default function AboutSection() {
           >
             Ver más →
           </Link>
-        </div>
-        <div className="flex justify-center">
+        </Reveal>
+        <Reveal delay={0.15} className="flex justify-center">
           <div className="flex size-72 items-center justify-center rounded-full bg-green-500/50">
             <div className="flex size-52 items-center justify-center rounded-full bg-green-400/50">
               <Image src="/naranja.png" width={220} height={220} alt="Naranja" />
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   )

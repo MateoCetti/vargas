@@ -8,6 +8,7 @@ import SnowflakeIcon from "@/components/icons/snowflake"
 import LeafIcon from "@/components/icons/leaf"
 import PhoneIcon from "@/components/icons/phone"
 import { chocoFont } from "@/lib/fonts"
+import Reveal from "@/components/reveal"
 
 const FILTERS = ["Todos", "Frutas", "Verduras"] as const
 
@@ -44,7 +45,7 @@ export default function ProductsPage() {
     return (
         <>
             <section className="bg-green-600 px-6 pb-20 pt-28 lg:px-12">
-                <div className="mx-auto max-w-6xl">
+                <Reveal className="mx-auto max-w-6xl">
                     <span className="w-fit rounded-full bg-white/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-white">
                         Catálogo
                     </span>
@@ -55,7 +56,7 @@ export default function ProductsPage() {
                         Frutas y verduras seleccionadas a mano, cuidando su economía sin dejar de lado la calidad.
                         Estos son algunos de los productos que comercializamos todos los días.
                     </p>
-                </div>
+                </Reveal>
             </section>
 
             <section className="bg-stone-50 px-6 py-16 lg:px-12">
@@ -80,8 +81,10 @@ export default function ProductsPage() {
                     </div>
 
                     <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                        {filtered.map((product) => (
-                            <ProductCard key={product.id} product={product} />
+                        {filtered.map((product, index) => (
+                            <Reveal key={product.id} delay={Math.min(index * 0.05, 0.3)}>
+                                <ProductCard product={product} />
+                            </Reveal>
                         ))}
                     </div>
                 </div>
@@ -89,20 +92,22 @@ export default function ProductsPage() {
 
             <section className="bg-white px-6 py-16 lg:px-12">
                 <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-3">
-                    {HIGHLIGHTS.map(({ icon: Icon, title, description }) => (
-                        <article key={title} className="rounded-xl border border-stone-200 bg-stone-50 p-6">
-                            <div className="flex size-10 items-center justify-center rounded-full bg-green-100 text-green-600">
-                                <Icon width={20} height={20} />
-                            </div>
-                            <h3 className="mt-4 font-bold text-neutral-900">{title}</h3>
-                            <p className="mt-2 text-sm text-neutral-600">{description}</p>
-                        </article>
+                    {HIGHLIGHTS.map(({ icon: Icon, title, description }, index) => (
+                        <Reveal key={title} delay={Math.min(index * 0.1, 0.3)}>
+                            <article className="rounded-xl border border-stone-200 bg-stone-50 p-6">
+                                <div className="flex size-10 items-center justify-center rounded-full bg-green-100 text-green-600">
+                                    <Icon width={20} height={20} />
+                                </div>
+                                <h3 className="mt-4 font-bold text-neutral-900">{title}</h3>
+                                <p className="mt-2 text-sm text-neutral-600">{description}</p>
+                            </article>
+                        </Reveal>
                     ))}
                 </div>
             </section>
 
             <section className="bg-neutral-900 px-6 py-16 lg:px-12">
-                <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-8 text-center lg:flex-row lg:text-left">
+                <Reveal className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-8 text-center lg:flex-row lg:text-left">
                     <div>
                         <h2 className={`text-3xl text-white lg:text-4xl ${chocoFont.className}`}>
                             ¿Buscás un producto en particular?
@@ -118,7 +123,7 @@ export default function ProductsPage() {
                         <PhoneIcon width={18} height={18} />
                         Consultar disponibilidad →
                     </a>
-                </div>
+                </Reveal>
             </section>
         </>
     )

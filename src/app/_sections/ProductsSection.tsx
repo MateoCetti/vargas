@@ -1,16 +1,19 @@
 import Link from "next/link"
 import naranjas from "@/assets/naranjas.jpg"
 import { chocoFont } from "@/lib/fonts"
+import Reveal from "@/components/reveal"
 
 export default function ProductsSection() {
   return (
     <section className="bg-stone-50 px-6 py-20 lg:px-12">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-2">
-        <div
-          className="aspect-square w-full rounded-2xl border border-stone-200 bg-cover bg-center shadow-sm lg:aspect-auto lg:h-96"
-          style={{ backgroundImage: `url(${naranjas.src})` }}
-        />
-        <div className="text-center lg:text-left">
+        <Reveal delay={0}>
+          <div
+            className="aspect-square w-full rounded-2xl border border-stone-200 bg-cover bg-center shadow-sm lg:aspect-auto lg:h-96"
+            style={{ backgroundImage: `url(${naranjas.src})` }}
+          />
+        </Reveal>
+        <Reveal delay={0.15} className="text-center lg:text-left">
           <span className="text-sm font-semibold uppercase tracking-wide text-orange-500">
             Nuestros productos
           </span>
@@ -28,7 +31,7 @@ export default function ProductsSection() {
           >
             Ver nuestros productos →
           </Link>
-        </div>
+        </Reveal>
       </div>
     </section>
   )

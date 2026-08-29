@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import photo from "@/assets/photo.jpg"
 import { chocoFont } from "@/lib/fonts"
+import Reveal from "@/components/reveal"
 
 export default function HeroSection() {
   return (
@@ -29,31 +30,39 @@ export default function HeroSection() {
       </nav>
 
       <div className="relative z-10 flex flex-1 flex-col justify-center px-6 py-16 lg:px-12">
-        <span className="mb-6 w-fit rounded-full bg-neutral-900/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-white">
-          Córdoba · Desde hace tres generaciones
-        </span>
-        <h1 className={`text-5xl leading-tight text-white lg:text-6xl ${chocoFont.className}`}>
-          Productos frescos,
-          <br />
-          <span className="text-orange-500">todos los días.</span>
-        </h1>
-        <p className="mt-6 max-w-md text-white/80">
-          Frutas y verduras seleccionadas a mano, cuidadas desde el origen hasta la mesa de tu familia.
-        </p>
-        <div className="mt-10 flex flex-wrap gap-4">
-          <Link
-            href="/main/products"
-            className="rounded-full bg-orange-500 px-6 py-3 font-semibold text-white hover:bg-orange-600"
-          >
-            Ver productos →
-          </Link>
-          <Link
-            href="#about-us"
-            className="rounded-full border border-white/60 px-6 py-3 font-semibold text-white hover:bg-white hover:text-neutral-900"
-          >
-            Sobre nosotros
-          </Link>
-        </div>
+        <Reveal delay={0}>
+          <span className="mb-6 w-fit rounded-full bg-neutral-900/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-white">
+            Córdoba · Desde hace tres generaciones
+          </span>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <h1 className={`text-5xl leading-tight text-white lg:text-6xl ${chocoFont.className}`}>
+            Productos frescos,
+            <br />
+            <span className="text-orange-500">todos los días.</span>
+          </h1>
+        </Reveal>
+        <Reveal delay={0.2}>
+          <p className="mt-6 max-w-md text-white/80">
+            Frutas y verduras seleccionadas a mano, cuidadas desde el origen hasta la mesa de tu familia.
+          </p>
+        </Reveal>
+        <Reveal delay={0.3}>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Link
+              href="/main/products"
+              className="rounded-full bg-orange-500 px-6 py-3 font-semibold text-white hover:bg-orange-600"
+            >
+              Ver productos →
+            </Link>
+            <Link
+              href="#about-us"
+              className="rounded-full border border-white/60 px-6 py-3 font-semibold text-white hover:bg-white hover:text-neutral-900"
+            >
+              Sobre nosotros
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   )

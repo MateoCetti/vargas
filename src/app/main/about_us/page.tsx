@@ -4,6 +4,7 @@ import LocationIcon from "@/components/icons/location"
 import MountainIcon from "@/components/icons/mountain"
 import StarIcon from "@/components/icons/star"
 import { chocoFont } from "@/lib/fonts"
+import Reveal from "@/components/reveal"
 
 const VALUES = [
     {
@@ -45,7 +46,7 @@ export default function AboutUsPage() {
     return (
         <>
             <section className="bg-green-600 px-6 pb-20 pt-28 lg:px-12">
-                <div className="mx-auto max-w-6xl">
+                <Reveal className="mx-auto max-w-6xl">
                     <span className="w-fit rounded-full bg-white/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-white">
                         Nuestra historia
                     </span>
@@ -56,36 +57,40 @@ export default function AboutUsPage() {
                         Tres generaciones dedicadas al comercio y cuidado de alimentos frescos, llevando productos
                         de primera calidad a la mesa de las familias cordobesas.
                     </p>
-                </div>
+                </Reveal>
             </section>
 
             <section className="bg-white px-6 py-16 lg:px-12">
                 <div className="mx-auto flex max-w-3xl flex-col gap-5 text-neutral-700">
                     {HISTORIA.map((paragraph, i) => (
-                        <p key={i} className="leading-relaxed">
-                            {paragraph}
-                        </p>
+                        <Reveal key={i} delay={Math.min(i * 0.1, 0.3)}>
+                            <p className="leading-relaxed">{paragraph}</p>
+                        </Reveal>
                     ))}
                 </div>
             </section>
 
             <section className="bg-stone-50 px-6 py-16 lg:px-12">
                 <div className="mx-auto max-w-6xl">
-                    <span className="text-sm font-semibold uppercase tracking-wide text-green-600">
-                        Nuestra empresa
-                    </span>
-                    <h2 className={`mt-3 text-4xl text-neutral-900 lg:text-5xl ${chocoFont.className}`}>
-                        Lo que nos define
-                    </h2>
+                    <Reveal>
+                        <span className="text-sm font-semibold uppercase tracking-wide text-green-600">
+                            Nuestra empresa
+                        </span>
+                        <h2 className={`mt-3 text-4xl text-neutral-900 lg:text-5xl ${chocoFont.className}`}>
+                            Lo que nos define
+                        </h2>
+                    </Reveal>
                     <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
-                        {VALUES.map(({ icon: Icon, title, description }) => (
-                            <article key={title} className="rounded-xl border border-stone-200 bg-white p-6">
-                                <div className="flex size-10 items-center justify-center rounded-full bg-green-100">
-                                    <Icon fill="#16a34a" width={20} height={20} />
-                                </div>
-                                <h3 className="mt-4 font-bold text-neutral-900">{title}</h3>
-                                <p className="mt-2 text-sm text-neutral-600">{description}</p>
-                            </article>
+                        {VALUES.map(({ icon: Icon, title, description }, index) => (
+                            <Reveal key={title} delay={Math.min(index * 0.1, 0.3)}>
+                                <article className="rounded-xl border border-stone-200 bg-white p-6">
+                                    <div className="flex size-10 items-center justify-center rounded-full bg-green-100">
+                                        <Icon fill="#16a34a" width={20} height={20} />
+                                    </div>
+                                    <h3 className="mt-4 font-bold text-neutral-900">{title}</h3>
+                                    <p className="mt-2 text-sm text-neutral-600">{description}</p>
+                                </article>
+                            </Reveal>
                         ))}
                     </div>
                 </div>
@@ -93,27 +98,28 @@ export default function AboutUsPage() {
 
             <section className="bg-white px-6 py-16 lg:px-12">
                 <div className="mx-auto max-w-6xl">
-                    <span className="text-sm font-semibold uppercase tracking-wide text-orange-500">Equipo</span>
-                    <h2 className={`mt-3 text-4xl text-neutral-900 lg:text-5xl ${chocoFont.className}`}>
-                        Los directivos
-                    </h2>
+                    <Reveal>
+                        <span className="text-sm font-semibold uppercase tracking-wide text-orange-500">Equipo</span>
+                        <h2 className={`mt-3 text-4xl text-neutral-900 lg:text-5xl ${chocoFont.className}`}>
+                            Los directivos
+                        </h2>
+                    </Reveal>
                     <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
-                        {DIRECTORS.map(({ name, image }) => (
-                            <article
-                                key={name}
-                                className="overflow-hidden rounded-2xl border border-stone-200 bg-stone-50"
-                            >
-                                <div className="relative aspect-square">
-                                    <Image
-                                        src={image}
-                                        alt={name}
-                                        fill
-                                        sizes="(min-width: 640px) 33vw, 100vw"
-                                        className="object-cover"
-                                    />
-                                </div>
-                                <p className="bg-white p-4 text-center font-bold text-neutral-900">{name}</p>
-                            </article>
+                        {DIRECTORS.map(({ name, image }, index) => (
+                            <Reveal key={name} delay={Math.min(index * 0.1, 0.3)}>
+                                <article className="overflow-hidden rounded-2xl border border-stone-200 bg-stone-50">
+                                    <div className="relative aspect-square">
+                                        <Image
+                                            src={image}
+                                            alt={name}
+                                            fill
+                                            sizes="(min-width: 640px) 33vw, 100vw"
+                                            className="object-cover"
+                                        />
+                                    </div>
+                                    <p className="bg-white p-4 text-center font-bold text-neutral-900">{name}</p>
+                                </article>
+                            </Reveal>
                         ))}
                     </div>
                 </div>
@@ -121,12 +127,14 @@ export default function AboutUsPage() {
 
             <section id="ubicacion" className="bg-stone-50 px-6 py-16 lg:px-12">
                 <div className="mx-auto max-w-6xl">
-                    <span className="text-sm font-semibold uppercase tracking-wide text-green-600">Ubicación</span>
-                    <h2 className={`mt-3 text-4xl text-neutral-900 lg:text-5xl ${chocoFont.className}`}>
-                        ¿Dónde encontrarnos?
-                    </h2>
+                    <Reveal>
+                        <span className="text-sm font-semibold uppercase tracking-wide text-green-600">Ubicación</span>
+                        <h2 className={`mt-3 text-4xl text-neutral-900 lg:text-5xl ${chocoFont.className}`}>
+                            ¿Dónde encontrarnos?
+                        </h2>
+                    </Reveal>
                     <div className="mt-10 grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
-                        <div>
+                        <Reveal delay={0}>
                             <p className="leading-relaxed text-neutral-600">
                                 Estamos ubicados en el mercado de abasto de la provincia de Córdoba (Ruta 19, Km 7
                                 1/2, Córdoba Argentina), más específicamente en la nave 3, puesto 322.
@@ -140,8 +148,8 @@ export default function AboutUsPage() {
                                 <LocationIcon width={18} height={18} />
                                 Ver en Google Maps
                             </a>
-                        </div>
-                        <div className="overflow-hidden rounded-2xl border border-stone-200">
+                        </Reveal>
+                        <Reveal delay={0.15} className="overflow-hidden rounded-2xl border border-stone-200">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27246.59763267547!2d-64.13171686523438!3d-31.39139669999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943297d6ff1e437d%3A0xc93a4dc6b8bb8848!2sMercado%20de%20Abasto!5e0!3m2!1ses-419!2sar!4v1721495073045!5m2!1ses-419!2sar"
                                 className="aspect-square w-full lg:aspect-auto lg:h-96"
@@ -149,17 +157,19 @@ export default function AboutUsPage() {
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
                             />
-                        </div>
+                        </Reveal>
                     </div>
 
-                    <h3 className={`mt-16 text-2xl text-neutral-900 ${chocoFont.className}`}>Conocé nuestro local</h3>
-                    <div className="mt-6 aspect-video w-full max-w-4xl overflow-hidden rounded-2xl border border-stone-200">
-                        <iframe
-                            className="h-full w-full"
-                            src="https://www.youtube.com/embed/peV6VhmQV0o"
-                            allowFullScreen
-                        />
-                    </div>
+                    <Reveal>
+                        <h3 className={`mt-16 text-2xl text-neutral-900 ${chocoFont.className}`}>Conocé nuestro local</h3>
+                        <div className="mt-6 aspect-video w-full max-w-4xl overflow-hidden rounded-2xl border border-stone-200">
+                            <iframe
+                                className="h-full w-full"
+                                src="https://www.youtube.com/embed/peV6VhmQV0o"
+                                allowFullScreen
+                            />
+                        </div>
+                    </Reveal>
                 </div>
             </section>
         </>

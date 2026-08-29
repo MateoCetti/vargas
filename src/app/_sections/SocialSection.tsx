@@ -1,11 +1,12 @@
 import FacebookIcon from "@/components/icons/facebook"
 import InstagramIcon from "@/components/icons/instagram"
 import { chocoFont } from "@/lib/fonts"
+import Reveal from "@/components/reveal"
 
 export default function SocialSection() {
   return (
     <section className="bg-neutral-900 px-6 py-16 lg:px-12">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-8 text-center lg:flex-row lg:text-left">
+      <Reveal className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-8 text-center lg:flex-row lg:text-left">
         <div>
           <h2 className={`text-3xl text-white lg:text-4xl ${chocoFont.className}`}>
             ¡Seguinos en nuestras redes!
@@ -30,7 +31,7 @@ export default function SocialSection() {
             <InstagramIcon fill="#fff" width={20} height={20} />
           </a>
         </div>
-      </div>
+      </Reveal>
     </section>
   )
 }
