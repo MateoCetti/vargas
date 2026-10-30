@@ -13,13 +13,15 @@ type RevealProps = {
 export default function Reveal({ children, className, delay = 0, y = 24 }: RevealProps) {
   const reduceMotion = useReducedMotion()
 
+  // initial/whileInView must match between server and client: the server always renders the
+  // hidden state, so dropping them on the client (reduced motion) left content at opacity 0.
   return (
     <motion.div
       className={className}
-      initial={reduceMotion ? undefined : { opacity: 0, y }}
-      whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: reduceMotion ? 0 : y }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
+      transition={reduceMotion ? { duration: 0 } : { duration: 0.6, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
     >
       {children}
     </motion.div>
